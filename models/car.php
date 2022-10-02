@@ -28,7 +28,7 @@
         public function getorigin(){return $this->origin;}
         public function getgear(){return $this->gear;}
 
-        public function __constructor ($id, $name, $title, $price, $color, $image, $description, $numberofseats, $style, $fuel, $origin, $gear){
+        public function __construct ($id, $name, $title, $price, $color, $image, $description, $numberofseats, $style, $fuel, $origin, $gear){
             $this->id = $id;
             $this->name = $name;
             $this->title = $title;
