@@ -76,132 +76,150 @@
 		
 		<section class="container py-5">
 			<div class="row">
-				<div class="col-lg-6 m-auto">
+				<div class="col-lg-6 m-auto" style="padding-bottom: 25px;">
 					<h1><center>KHÁM PHÁ CÁC DÒNG XE </center></h1>
 				</div>
 			</div>
-			<div class="row mt-4" style="display: flex; justify-content: center;">
-				<div class="card-deck">
-  					<div class="card">
-    				<img src="image/toyotacamry2jpeg-1647331125.jpg" class="card-img-top" alt="car1" style="height:240px;">
-    				<div class="card-body">
-      					<h4 class="card-title">CAMRY 2.5HV</h4>
-						<small class="card-title text-muted" ><h6>XỨNG TẦM DOANH NHÂN</h6></small>
-						<h5 class="card-title"><font color="red">1,468,000,000</font> VND</h5>
-      					<p class="card-text">•Số chỗ ngồi: 5<br/>
-											•Kiểu dáng: Sedan<br/>
-											•Nguyên liệu: Xăng<br/>
-											•Xuất xứ: Thái Lan<br/>
-											•Số tự động vô cấp CTV
-						</p>
-    				</div>
-    				<div class="card-footer">
-						<div class="d-flex justify-content-around">
-							<button type="button" class="btn btn-danger">Lái thử xe</button>
-						</div>		
-    				</div>
-  					</div>
-  				<div class="card">
-    				<img src="image/Wigo-JPG.jpg" class="card-img-top" alt="car2" style="height:240px;">
-    				<div class="card-body">
-      					<h4 class="card-title">WIGO 4AT</h4>
-						<small class="card-title text-muted" ><h6>GỌN NHỎ LƯỚT PHỐ</h6></small>
-						<h5 class="card-title"><font color="red">385,000,000</font> VND</h5>
-      					<p class="card-text">•Số chỗ ngồi: 5 <br/>
-											•Kiểu dáng: Hatchback<br/>
-											•Nguyên liệu: Xăng<br/>
-											• Xe nhập khẩu <br/>
-											•Số tự động 4 cấp
-						</p>
-    				</div>
-    				<div class="card-footer">
-						<div class="d-flex justify-content-around">
-							<button type="button" class="btn btn-danger">Lái thử xe</button>
-						</div>		
-    				</div>
-  					</div>
-  				<div class="card">
-    				<img src="image/than-xe-toyota-yaris-2021-otoz-vn-blog.png" class="card-img-top" alt="car3" style="height:240px;">
-    				<div class="card-body">
-      					<h4 class="card-title">YARIS 1.5G CTV</h4>
-						<small class="card-title text-muted" ><h6>SÀNH ĐIỆU XUỐNG PHỐ</h6></small>
-						<h5 class="card-title"><font color="red">684,000,000</font> VND</h5>
-      					<p class="card-text">•Số chỗ ngồi: 5 <br/>
-											•Kiểu dáng: Hatchback<br/>
-											•Nguyên liệu: Xăng<br/>
-											•Xuất xứ: Thái Lan <br/>
-											•Hộp số tự động vô cấp
-						</p>
-    				</div>
-    				<div class="card-footer">
-						<div class="d-flex justify-content-around">
-							<button type="button" class="btn btn-danger">Lái thử xe</button>
-						</div>		
-    				</div>
-  					</div>
+
+			<div class="row row-cols-1 row-cols-md-3">
+				<!-- car 1 -->
+				<div class="col mb-4">
+					<div class="card">
+						<img src="image/toyotacamry2jpeg-1647331125.jpg" class="card-img-top" alt="car1" style="height:240px;">
+						<div class="card-body">
+							<h4 class="card-title">CAMRY 2.5HV</h4>
+							<small class="card-title text-muted" ><h6>XỨNG TẦM DOANH NHÂN</h6></small>
+							<h5 class="card-title"><font color="red">1,468,000,000</font> VND</h5>
+							<p class="card-text">•Số chỗ ngồi: 5<br/>
+												•Kiểu dáng: Sedan<br/>
+												•Nguyên liệu: Xăng<br/>
+												•Xuất xứ: Thái Lan<br/>
+												•Số tự động vô cấp CTV
+							</p>
+						</div>
+						<div class="card-footer">
+							<div class="d-flex justify-content-around">
+								<button type="button" class="btn btn-danger">Lái thử xe</button>
+							</div>		
+						</div>
+					</div>
+				</div>
+
+				<!-- car 2 -->
+				<div class="col mb-4">
+					<div class="card">
+						<img src="image/Wigo-JPG.jpg" class="card-img-top" alt="car2" style="height:240px;">
+						<div class="card-body">
+							<h4 class="card-title">WIGO 4AT</h4>
+							<small class="card-title text-muted" ><h6>GỌN NHỎ LƯỚT PHỐ</h6></small>
+							<h5 class="card-title"><font color="red">385,000,000</font> VND</h5>
+							<p class="card-text">•Số chỗ ngồi: 5 <br/>
+												•Kiểu dáng: Hatchback<br/>
+												•Nguyên liệu: Xăng<br/>
+												• Xe nhập khẩu <br/>
+												•Số tự động 4 cấp
+							</p>
+						</div>
+						<div class="card-footer">
+							<div class="d-flex justify-content-around">
+								<button type="button" class="btn btn-danger">Lái thử xe</button>
+							</div>		
+						</div>
+					</div>
+				</div>
+
+				<!-- car 3 -->
+				<div class="col mb-4">
+					<div class="card">
+						<img src="image/than-xe-toyota-yaris-2021-otoz-vn-blog.png" class="card-img-top" alt="car3" style="height:240px;">
+						<div class="card-body">
+							<h4 class="card-title">YARIS 1.5G CTV</h4>
+							<small class="card-title text-muted" ><h6>SÀNH ĐIỆU XUỐNG PHỐ</h6></small>
+							<h5 class="card-title"><font color="red">684,000,000</font> VND</h5>
+							<p class="card-text">•Số chỗ ngồi: 5 <br/>
+												•Kiểu dáng: Hatchback<br/>
+												•Nguyên liệu: Xăng<br/>
+												•Xuất xứ: Thái Lan <br/>
+												•Hộp số tự động vô cấp
+							</p>
+						</div>
+						<div class="card-footer">
+							<div class="d-flex justify-content-around">
+								<button type="button" class="btn btn-danger">Lái thử xe</button>
+							</div>		
+						</div>
+					</div>
+				</div>
+
+				<!-- car 4 -->
+				<div class="col mb-4">
+					<div class="card">
+						<img src="image/toyota-raize-da-ve-dai-ly-san-sang-giao-xe-cho-khach-hang-9e8-6187498.jpg" class="card-img-top" alt="car4" style="height:240px;">
+						<div class="card-body">
+							<h4 class="card-title">RAIZE</h4>
+							<small class="card-title text-muted" ><h6>KHUẤY ĐẢO CUỘC CHƠI</h6></small>
+							<h5 class="card-title"><font color="red">547,000,000</font> VND</h5>
+							<p class="card-text">•Số chỗ ngồi: 5<br/>
+												•Kiểu dáng: SUV<br/>
+												•Nguyên liệu: Xăng<br/>
+												•Xuất xứ: Indonesia <br/>
+												•Số tự động vô cấp
+							</p>
+						</div>
+						<div class="card-footer">
+							<div class="d-flex justify-content-around">
+								<button type="button" class="btn btn-danger">Lái thử xe</button>
+							</div>		
+						</div>
+					</div>
+				</div>
+
+				<!-- car 5 -->
+				<div class="col mb-4">
+					<div class="card">
+						<img src="image/hilux-1.jpg" class="card-img-top" alt="car5" style="height:240px;">
+						<div class="card-body">
+							<h4 class="card-title">HILUX 2.8L 4X4 AT ADVENTURE</h4>
+							<small class="card-title text-muted" ><h6>CHINH PHỤC ĐỈNH CAO</h6></small>
+							<h5 class="card-title"><font color="red">913,000,000</font> VND</h5>
+							<p class="card-text">•Số chỗ ngồi: 5 <br/>
+												•Kiểu dáng: Hilux<br/>
+												•Nguyên liệu: Dầu<br/>
+												•Xuất xứ: Thái Lan <br/>
+												•Số tự động 6 cấp
+							</p>
+						</div>
+						<div class="card-footer">
+							<div class="d-flex justify-content-around">
+								<button type="button" class="btn btn-danger">Lái thử xe</button>
+							</div>		
+						</div>
+					</div>
+				</div>
+
+				<!-- car 6 -->
+				<div class="col mb-4">
+					<div class="card">
+						<img src="image/Bai-Toyota-Land-Cruiser-2022-1-1683-1623292353.jpg" class="card-img-top" alt="car6" style="height:240px;">
+						<div class="card-body">
+							<h4 class="card-title">LAND CRUISER 300</h4>
+							<small class="card-title text-muted" ><h6>UY LỰC THỐNG LĨNH</h6></small>
+							<h5 class="card-title"><font color="red">4,100,000,000</font> VND</h5>
+							<p class="card-text">•Số chỗ ngồi: 7 <br/>
+												•Kiểu dáng: SUV<br/>
+												•Nguyên liệu: Xăng<br/>
+												•Xuất xứ: Thái Lan <br/>
+												•Số tự động 10 cấp
+							</p>
+						</div>
+						<div class="card-footer">
+							<div class="d-flex justify-content-around">
+								<button type="button" class="btn btn-danger">Lái thử xe</button>
+							</div>		
+						</div>
+					</div>
 				</div>
 			</div>
-		<div class="row mt-4 mb-4" style="display: flex; justify-content: center;">
-			<div class="card-deck">
-  					<div class="card">
-    				<img src="image/toyota-raize-da-ve-dai-ly-san-sang-giao-xe-cho-khach-hang-9e8-6187498.jpg" class="card-img-top" alt="car4" style="height:240px;">
-    				<div class="card-body">
-      					<h4 class="card-title">RAIZE</h4>
-						<small class="card-title text-muted" ><h6>KHUẤY ĐẢO CUỘC CHƠI</h6></small>
-						<h5 class="card-title"><font color="red">547,000,000</font> VND</h5>
-      					<p class="card-text">•Số chỗ ngồi: 5<br/>
-											•Kiểu dáng: SUV<br/>
-											•Nguyên liệu: Xăng<br/>
-											•Xuất xứ: Indonesia <br/>
-											•Số tự động vô cấp
-						</p>
-    				</div>
-    				<div class="card-footer">
-						<div class="d-flex justify-content-around">
-							<button type="button" class="btn btn-danger">Lái thử xe</button>
-						</div>		
-    				</div>
-  					</div>
-  				<div class="card">
-    				<img src="image/hilux-1.jpg" class="card-img-top" alt="car5" style="height:240px;">
-    				<div class="card-body">
-      					<h4 class="card-title">HILUX 2.8L 4X4 AT ADVENTURE</h4>
-						<small class="card-title text-muted" ><h6>CHINH PHỤC ĐỈNH CAO</h6></small>
-						<h5 class="card-title"><font color="red">913,000,000</font> VND</h5>
-      					<p class="card-text">•Số chỗ ngồi: 5 <br/>
-											•Kiểu dáng: Hilux<br/>
-											•Nguyên liệu: Dầu<br/>
-											•Xuất xứ: Thái Lan <br/>
-											•Số tự động 6 cấp
-						</p>
-    				</div>
-    				<div class="card-footer">
-						<div class="d-flex justify-content-around">
-							<button type="button" class="btn btn-danger">Lái thử xe</button>
-						</div>		
-    				</div>
-  					</div>
-  			<div class="card">
-    				<img src="image/Bai-Toyota-Land-Cruiser-2022-1-1683-1623292353.jpg" class="card-img-top" alt="car6" style="height:240px;">
-    				<div class="card-body">
-      					<h4 class="card-title">LAND CRUISER 300</h4>
-						<small class="card-title text-muted" ><h6>UY LỰC THỐNG LĨNH</h6></small>
-						<h5 class="card-title"><font color="red">4,100,000,000</font> VND</h5>
-      					<p class="card-text">•Số chỗ ngồi: 7 <br/>
-											•Kiểu dáng: SUV<br/>
-											•Nguyên liệu: Xăng<br/>
-											•Xuất xứ: Thái Lan <br/>
-											•Số tự động 10 cấp
-						</p>
-    				</div>
-    				<div class="card-footer">
-						<div class="d-flex justify-content-around">
-							<button type="button" class="btn btn-danger">Lái thử xe</button>
-						</div>		
-    				</div>
-  					</div>
-			</div>
-		</div>
 		<hr>
 		<div class="row mt-4 bg-light">
 			<div class="col-4 col-md-4">
