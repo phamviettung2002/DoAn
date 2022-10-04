@@ -18,3 +18,9 @@
     height: 32px;
     width: 32px;
 }
+.card-footer{
+    display: flex;
+}
+.d-flex{
+    margin: 0 auto;
+}

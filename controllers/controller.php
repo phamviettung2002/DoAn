@@ -11,7 +11,13 @@
         }
         public function  invoke()
         {
-
+            if(!isset($_GET["carid"])){
+                $cars = $this->model->getcarlist();
+                include "views/home.php";
+            }else{
+                $car = $this->model->getcar($_GET["carid"]);
+                include "views/viewcar.php";
+            }
         }
     }
 ?>
