@@ -16,14 +16,14 @@
         <div class="row ">
             <div class="col-md-12 m-auto">
                 <nav class="navbar navbar-expand-sm navbar-light bg-light fixed-top">                  
-					<a class="navbar-brand"><img src="./image/Toyota-Logo-1989-present-scaled.png" alt="logo" height="80" width="170"/></a>
+					<a class="navbar-brand" href="index.php"><img src="./image/Toyota-Logo-1989-present-scaled.png" alt="logo" height="80" width="170"/></a>
 					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
 						<span class="navbar-toggler-icon"></span>
 					</button>
 				
 					<div class="collapse navbar-collapse" id="navbarResponsive" style="padding-left: 350px ;">
 						<ul class="navbar-nav ml-auto" style="padding-right:50px ;">
-							<li class="nav-item active" style="padding-right:50px ;"><a class="nav-link" href="#" style="font-family: Times New Roman; font-size:24px ">Trang chủ</a></li>
+							<li class="nav-item active" style="padding-right:50px ;"><a class="nav-link" href="index.php" style="font-family: Times New Roman; font-size:24px ">Trang chủ</a></li>
 							<li class="nav-item active"><a class="nav-link" href="#" style="font-family: Times New Roman; font-size:24px">Danh sách</a></li>
 						</ul>
 					
@@ -98,7 +98,7 @@
 									<button type="button" class="btn btn-danger">Lái thử xe</button>
 								</div>
 								<div class="d-flex justify-content-around">
-									<a href = "index.php?carid='<?php echo $car->getid(); ?>'" class="btn btn-danger" >Chi tiết</a>
+									<a href = "index.php?carid=<?php echo $car->getid(); ?>" class="btn btn-danger" >Chi tiết</a>
 								</div>		
 							</div>
 						</div>

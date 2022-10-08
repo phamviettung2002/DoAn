@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="viewcar.css">
+    <link rel="stylesheet" href="views/viewcar.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
@@ -16,15 +16,15 @@
     <div class="container-fluid">
         <div class="row row_header">
             <div class="col-md-12 m-auto">
-                <nav class="navbar navbar-expand-sm navbar-light bg-light">                  
-                            <a class="navbar-brand"><img src="./image/Toyota-Logo-1989-present-scaled.png" alt="logo" height="80" width="170"/></a>
+                <nav class="navbar navbar-expand-sm navbar-light bg-light fixed-top">                  
+                            <a class="navbar-brand" href="index.php"><img src="./image/Toyota-Logo-1989-present-scaled.png" alt="logo" height="80" width="170"/></a>
                             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
                                 <span class="navbar-toggler-icon"></span>
                             </button>
                         
-                            <div class="collapse navbar-collapse" id="navbarResponsive" style="padding-left: 250px ;">
+                            <div class="collapse navbar-collapse" id="navbarResponsive" style="padding-left: 350px ;">
                               <ul class="navbar-nav ml-auto" style="padding-right:50px ;">
-                                  <li class="nav-item active" style="padding-right:50px ;"><a class="nav-link" href="#" style="font-family: Times New Roman; font-size:24px ">Trang chủ</a></li>
+                                  <li class="nav-item active" style="padding-right:50px ;"><a class="nav-link" href="index.php" style="font-family: Times New Roman; font-size:24px ">Trang chủ</a></li>
                                   <li class="nav-item active"><a class="nav-link" href="#" style="font-family: Times New Roman; font-size:24px">Danh sách</a></li>
 
                               </ul>
@@ -42,7 +42,7 @@
             </div>
         </div>
 
-        <div class="row row_headcontent" style="margin-top: 10px;">
+        <div class="row row_headcontent" style="padding-top: 115px;">
             <div class="col-md-5" style="height:450px;">
                 <div id="carouselExampleIndicators" class="carousel slide col-12" data-ride="carousel" style="padding:0px; height: 100%;">
                     <ol class="carousel-indicators">
@@ -52,13 +52,13 @@
                     </ol>
                     <div class="carousel-inner" style="height:100%;">
                       <div class="carousel-item active" style="height:100%;">
-                        <img src="https://blog.xetot.com/wp-content/uploads/2022/01/3ewq69p4ALbXW5p0A1EJGmEA9VEsilU8ei7oMFCb7ba5449NakqRCljRvE6FfR5OPN0r5t84dTCqcSF6sJ6-DDUMG9wdQI0tU3pl5IkGUZ6ssYmJzI9t6lPm8v39KvEHiCFjSwhf.jpg" alt="Banner" class="d-block w-100" style="height:100% ; width: 100%">
+                        <img src="<?php echo $car->getimage(); ?>" alt="Banner" class="d-block w-100" style="height:100% ; width: 100%">
                       </div>
                       <div class="carousel-item" style="height:100%;">
-                        <img src="https://znews-photo.zingcdn.me/w660/Uploaded/yzizh/2021_12_24/thumb_Camry_HV.jpg" alt="Banner" class="d-block w-100" style="height:100% ; width: 100%">
+                        <img src="<?php echo $car->getimage1(); ?>" alt="Banner" class="d-block w-100" style="height:100% ; width: 100%">
                       </div>
                       <div class="carousel-item" style="height:100%;">
-                        <img src="https://muaxenhanh.vn/wp-content/uploads/2022/01/Gia-xe-Toyota-Camry-2022-Thailand-2.5-HEV-giaxehoi-vn-800x534-1.jpg" alt="Banner" class="d-block w-100" style="height:100% ; width: 100%">
+                        <img src="<?php echo $car->getimage2(); ?>" alt="Banner" class="d-block w-100" style="height:100% ; width: 100%">
                       </div>
                     </div>
                     <button class="carousel-control-prev" type="button" data-target="#carouselExampleIndicators" data-slide="prev">
@@ -74,11 +74,11 @@
 
             <div class="col-md-7">
               <div style="margin-top:30px; padding:0px 50px;">
-                  <h2 class="card-title" >Toyota Camry 2.5HV 2022</h2>
-                  <small class="card-title text-muted"><h6>XỨNG TẦM DOANH NHÂN</h6></small>
+                  <h2 class="card-title" ><?php echo $car->getname(); ?></h2>
+                  <small class="card-title text-muted"><h6><?php echo $car->gettitle(); ?></h6></small>
 
                   <div class="price">
-                      <h3 class="price price_title">1,468,000,000 VND</h3>
+                      <h3 class="price price_title"><?php echo $car->getprice(); ?></h3>
                   </div>
 
                   <div class="rating" style="margin-top: 40px;">
@@ -113,49 +113,31 @@
             </div>
 
             <div class="product-details">
-              <ul class="product-details_title">
-                <li>Thông số sản phẩm:</li>
-                <li>- Tên: Toyota Camry 2.5HV 2022</li>
-                <li>- Phân khúc: sedan hạng D</li>
-                <li>- Số chỗ: 5</li>
-                <li>- Xuất sứ: Thái Lan</li>
-                <li>- Kích thước tổng thể (DxRxC) (mm): 4.886 x 1.840 x 1.445</li>
-                <li>- Dung tích bình nhiên liệu (L): 50</li>
-                <li>- Nhiên liệu: xăng lai điện</li>
-                <li>- Động cơ xăng: 2.5L (175 hp/ 221 Nm)</li>
-                <li>- Mô-tơ điện: 86 hp/202 Nm</li>
-                <li>- Công suất tối đa (hp@vòng/phút): 208</li>
-                <li>- Số tự động: vô cấp CTV</li>
-                <li>- Phanh trước/sau: Đĩa tản nhiệt/Đĩa</li>
-                <li>&nbsp;</li>
-                <li>
-                  Không có quá nhiều thay đổi về bộ cánh của Toyota Camry 2022 nâng cấp mới nói chung và <strong>Camry 2.5 HV 2022</strong>&nbsp;nói riêng. Xe vẫn giữ được những nét thiết kế đặc trưng bản bản hiện hành. Đó là sự trẻ trung, năng động và hiện đại, đặc biệt là “cái chất” doanh nhân sang trọng, cao cấp và quyền lực từ trước đến nay của Camry.
-                </li>
-              </ul>
-              
-              
+              <p class="product-details_title">
+                <?php echo nl2br($car->getdescription()); ?>
+              </p>
             </div>
           </div>
 
           <div class="col-md-4 bodycontent_right">
             <div class="card">
-              <a href="#" style="text-decoration: none; color: black; height: 100%; width: 100%;">
-                <img src="./image/Wigo-JPG.jpg" class="card-img" alt="car">
+              <a href="index.php?carid=<?php echo $cartempt1->getid(); ?>" style="text-decoration: none; color: black; height: 100%; width: 100%;">
+                <img src="<?php echo $cartempt1->getimage(); ?>" class="card-img" alt="car">
                 <div class="card-body" style="padding: 10px;">
-                    <h4 class="card-title">WIGO 4AT</h4>
-                    <small class="card-title text-muted" ><h6>GỌN NHỎ LƯỚT PHỐ</h6></small>
-                    <h5 class="card-title"><font color="red">385,000,000</font> VND</h5>
+                    <h4 class="card-title"><?php echo $cartempt1->getname(); ?></h4>
+                    <small class="card-title text-muted" ><h6><?php echo $cartempt1->gettitle(); ?></h6></small>
+                    <h5 class="card-title"><font color="red"><?php echo $cartempt1->getprice(); ?></font> VND</h5>
                 </div>
               </a>
             </div>
 
             <div class="card" style="top:5px;">
-              <a href="#" style="text-decoration: none; color: black; height: 100%; width: 100%;">
-                <img src="./image/than-xe-toyota-yaris-2021-otoz-vn-blog.png" class="card-img" alt="car">
+              <a href="index.php?carid=<?php echo $cartempt2->getid(); ?>" style="text-decoration: none; color: black; height: 100%; width: 100%;">
+                <img src="<?php echo $cartempt2->getimage(); ?>" class="card-img" alt="car">
                 <div class="card-body" style="padding: 10px;">
-                    <h4 class="card-title">YARIS 1.5G CTV</h4>
-                    <small class="card-title text-muted" ><h6>SÀNH ĐIỆU XUỐNG PHỐ</h6></small>
-                    <h5 class="card-title"><font color="red">684,000,000</font> VND</h5>
+                    <h4 class="card-title"><?php echo $cartempt2->getname(); ?></h4>
+                    <small class="card-title text-muted" ><h6><?php echo $cartempt2->gettitle(); ?></h6></small>
+                    <h5 class="card-title"><font color="red"><?php echo $cartempt2->getprice(); ?></font> VND</h5>
                 </div>
               </a>
             </div>
