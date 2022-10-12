@@ -78,6 +78,8 @@
 			</div>
 
 			<div class="row row-cols-1 row-cols-md-3">
+
+				<!-- Hiển thị sản phẩm -->
 				<?php foreach($cars as $car) : ?>
 					<div class="col mb-4">
 						<div class="card">
@@ -105,24 +107,66 @@
 					</div>
 				<?php endforeach; ?>
 			</div>
-		<hr>
-		<div class="row mt-4 bg-light">
-			<div class="col-4 col-md-4">
-				
-				<center><img src="image/promo-code.png" alt="Khuyến Mãi" width="50" height="50"></center>
-				<p><h6><center>ƯU ĐÃI VOUCHER</center></h6></p>
+
+			<!-- Phân trang -->
+			<?php
+				require_once ("models/model.php");
+
+				$getmethodofModel = new Model();
+
+				$productofpage = $getmethodofModel->getproductofpage();
+				$page = $getmethodofModel->getpage();
+				$from = $getmethodofModel->getfrom();
+
+				//Tổng số sản phẩm
+				$row = $getmethodofModel->getnumberrow();
+				$total = ceil($row/$productofpage);
+			?>
+
+			<div class= "pager" style = "padding: 35px 0px;">
+				<div class= "pager_main" style = "display: flex; justify-content: center;">
+					<?php
+						if($page>1){
+							echo "<a class = 'pager_title' href='./?page=".($page - 1)."' style = 'margin:0px 15px;'><button class='btn_pager' style = 'background-color: white; color: black; border: 0px; font-size: 20px; width: 50px; border-radius:4px;'><</button></a>";
+						}else{
+							echo "<a class = 'pager_title' style = 'margin:0px 15px;'><button class='btn_pager' style = 'background-color: white; color: black; border: 0px; font-size: 20px; width: 50px; border-radius:4px;'><</button></a>";
+						}
+						for ($i = 1; $i <= $total; $i++){
+							if ($i!=$page){
+								echo "<a class = 'pager_title' href='./?page=".$i.(isset($_GET['dm'])?"&dm=".$_GET['dm']:"")."' style = 'margin:0px 15px;'><button class='btn_pager' style = 'background-color: white; color: black; border: 0px; font-size: 23px; width: 50px;'>$i</button></a>";
+							}else{
+								echo "<span class = 'pager_title' style = 'margin:0px 15px;'><button class='btn_pager' style = 'background-color: #dc3545; color: white; border: 0px; font-size: 23px; width: 50px; border-radius:4px;'>$i</button></span>";
+							}
+						}
+						if($page < $total){
+							echo "<a class = 'pager_title' href='./?page=".($page + 1)."' style = 'margin:0px 15px;'><button class='btn_pager' style = 'background-color: white; color: black; border: 0px; font-size: 20px; width: 50px; border-radius:4px;'>></button></a>";
+						}else{
+							echo "<a class = 'pager_title' style = 'margin:0px 15px;'><button class='btn_pager' style = 'background-color: white; color: black; border: 0px; font-size: 20px; width: 50px; border-radius:4px;'>></button></a>";
+						}
+
+					?>
+				</div>
+			</div>
 			
+			
+			<hr>
+			<div class="row mt-4 bg-light">
+				<div class="col-4 col-md-4">
+					
+					<center><img src="image/promo-code.png" alt="Khuyến Mãi" width="50" height="50"></center>
+					<p><h6><center>ƯU ĐÃI VOUCHER</center></h6></p>
+				
+				</div>
+				<div class="col-4 col-md-4">
+					<center><img src="image/pricing.png" alt="Khuyến Mãi" width="50" height="50"></center>
+					<p><h6><center>GIÁ CẢ HỢP LÝ</center></h6></p>
+				</div>
+				<div class="col-4 col-md-4">
+					<center><img src="image/steering-wheel.png" alt="Khuyến Mãi" width="50" height="50"></center>
+					<p><h6><center>TRẢI NGHIỆM LÁI THỬ</center></h6></p>
+				</div>
 			</div>
-			<div class="col-4 col-md-4">
-				<center><img src="image/pricing.png" alt="Khuyến Mãi" width="50" height="50"></center>
-				<p><h6><center>GIÁ CẢ HỢP LÝ</center></h6></p>
-			</div>
-			<div class="col-4 col-md-4">
-				<center><img src="image/steering-wheel.png" alt="Khuyến Mãi" width="50" height="50"></center>
-				<p><h6><center>TRẢI NGHIỆM LÁI THỬ</center></h6></p>
-			</div>
-		</div>
-		<hr>
+			<hr>
 		</section>
 
 		<div class="row rowFooter">
