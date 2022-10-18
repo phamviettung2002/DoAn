@@ -4,6 +4,9 @@
 {
 	color: blue;
 }
+.navbar-collapse{
+    padding-left: 350px;
+}
 .rowFooter{
 	background-color: #f8f9fa;
 	

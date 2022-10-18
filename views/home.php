@@ -13,7 +13,7 @@
 </head>
 <body>
     <div class="container-fluid">
-        <div class="row ">
+        <div class="row">
             <div class="col-md-12 m-auto">
                 <nav class="navbar navbar-expand-sm navbar-light bg-light fixed-top">                  
 					<a class="navbar-brand" href="index.php"><img src="./image/Toyota-Logo-1989-present-scaled.png" alt="logo" height="80" width="170"/></a>
@@ -21,16 +21,18 @@
 						<span class="navbar-toggler-icon"></span>
 					</button>
 				
-					<div class="collapse navbar-collapse" id="navbarResponsive" style="padding-left: 350px ;">
+					<div class="collapse navbar-collapse" id="navbarResponsive">
 						<ul class="navbar-nav ml-auto" style="padding-right:50px ;">
-							<li class="nav-item active" style="padding-right:50px ;"><a class="nav-link" href="index.php" style="font-family: Times New Roman; font-size:24px ">Trang chủ</a></li>
+							<li class="nav-item active" style="padding-right:50px"><a class="nav-link" href="index.php" style="font-family: Times New Roman; font-size:24px ">Trang chủ</a></li>
 							<li class="nav-item active"><a class="nav-link" href="#" style="font-family: Times New Roman; font-size:24px">Danh sách</a></li>
 						</ul>
 					
-						<form class="form-inline my-2 my-lg-0">
-							<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" size="15">
-							<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-						</form>
+						<ul class="navbar-nav ml-auto" style="padding-right:50px ;">
+							<form class="form-inline my-2 my-lg-0">
+								<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" size="15">
+								<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+							</form>
+						</ul>
 
 						<ul class="navbar-nav ml-auto">
 							<li class="nav-item active"><a class="nav-link" href="#" style="font-family: Times New Roman; font-size:24px ">Đăng nhập</a></li>
@@ -127,19 +129,19 @@
 				<div class= "pager_main" style = "display: flex; justify-content: center;">
 					<?php
 						if($page>1){
-							echo "<a class = 'pager_title' href='./?page=".($page - 1)."' style = 'margin:0px 15px;'><button class='btn_pager' style = 'background-color: white; color: black; border: 0px; font-size: 20px; width: 50px; border-radius:4px;'><</button></a>";
+							echo "<a class = 'pager_title' href='index.php?page=".($page - 1)."' style = 'margin:0px 15px;'><button class='btn_pager' style = 'background-color: white; color: black; border: 0px; font-size: 20px; width: 50px; border-radius:4px;'><</button></a>";
 						}else{
 							echo "<a class = 'pager_title' style = 'margin:0px 15px;'><button class='btn_pager' style = 'background-color: white; color: black; border: 0px; font-size: 20px; width: 50px; border-radius:4px;'><</button></a>";
 						}
 						for ($i = 1; $i <= $total; $i++){
 							if ($i!=$page){
-								echo "<a class = 'pager_title' href='./?page=".$i.(isset($_GET['dm'])?"&dm=".$_GET['dm']:"")."' style = 'margin:0px 15px;'><button class='btn_pager' style = 'background-color: white; color: black; border: 0px; font-size: 23px; width: 50px;'>$i</button></a>";
+								echo "<a class = 'pager_title' href='index.php?page=".$i.(isset($_GET['dm'])?"&dm=".$_GET['dm']:"")."' style = 'margin:0px 15px;'><button class='btn_pager' style = 'background-color: white; color: black; border: 0px; font-size: 23px; width: 50px;'>$i</button></a>";
 							}else{
 								echo "<span class = 'pager_title' style = 'margin:0px 15px;'><button class='btn_pager' style = 'background-color: #dc3545; color: white; border: 0px; font-size: 23px; width: 50px; border-radius:4px;'>$i</button></span>";
 							}
 						}
 						if($page < $total){
-							echo "<a class = 'pager_title' href='./?page=".($page + 1)."' style = 'margin:0px 15px;'><button class='btn_pager' style = 'background-color: white; color: black; border: 0px; font-size: 20px; width: 50px; border-radius:4px;'>></button></a>";
+							echo "<a class = 'pager_title' href='index.php?page=".($page + 1)."' style = 'margin:0px 15px;'><button class='btn_pager' style = 'background-color: white; color: black; border: 0px; font-size: 20px; width: 50px; border-radius:4px;'>></button></a>";
 						}else{
 							echo "<a class = 'pager_title' style = 'margin:0px 15px;'><button class='btn_pager' style = 'background-color: white; color: black; border: 0px; font-size: 20px; width: 50px; border-radius:4px;'>></button></a>";
 						}

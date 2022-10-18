@@ -15,7 +15,7 @@
             $numberrow = $this->model->getnumberrow();
             
             if(!isset($_GET["carid"])){
-                $cars = $this->model->getcarlist();
+                $cars = $this->model->getcarlistbypage();
                 include "views/home.php";
             }
             else{

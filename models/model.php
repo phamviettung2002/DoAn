@@ -17,17 +17,23 @@
             $page = $this->getpage();
             $productofpage = $this->getproductofpage();
             $from = ($page - 1)*$productofpage;
-            //$from= 2;
             return $from;
         }
 
-        public function getcarlist()
+        // Lấy danh sách xe theo trang sản phẩm
+        public function getcarlistbypage()
         {
             $link = null;
             taoKetNoi($link);
             $from = $this->getfrom();
             $productofpage = $this->getproductofpage();
-            $result = chayTruyVanTraVeDL ($link, "select * from tbl_car limit ".$from.", ".$productofpage);
+
+            if(isset($_GET['dm'])){
+                $result = chayTruyVanTraVeDL($link, "select * from tbl_car where id=".$_GET['dm']." limit ".$from.", ".$productofpage);
+            }else{
+                $result = chayTruyVanTraVeDL ($link, "select * from tbl_car limit ".$from.", ".$productofpage);
+            }
+            
             $data = array ();
             while ($rows = mysqli_fetch_assoc($result)){
                 $car = new Car ($rows["id"], $rows["name"], $rows["title"], $rows["price"], $rows["color"], $rows["image"], $rows["image1"], $rows["image2"], $rows["description"], $rows["numberofseats"], $rows["style"], $rows["fuel"], $rows["origin"], $rows["gear"]);
@@ -36,9 +42,26 @@
             giaiPhongBoNho($link, $result);
             return $data;
         }
+
+        // Lấy danh sách tất cả các xe
+        public function getallcarlist()
+        {
+            $link = null;
+            taoKetNoi($link);
+            $result = chayTruyVanTraVeDL ($link, "select * from tbl_car ");
+            $data = array ();
+            while ($rows = mysqli_fetch_assoc($result)){
+                $car = new Car ($rows["id"], $rows["name"], $rows["title"], $rows["price"], $rows["color"], $rows["image"], $rows["image1"], $rows["image2"], $rows["description"], $rows["numberofseats"], $rows["style"], $rows["fuel"], $rows["origin"], $rows["gear"]);
+                array_push($data, $car);
+            }
+            giaiPhongBoNho($link, $result);
+            return $data;
+        }
+
+        // Lấy xe theo id
         public function getcar($id)
         {
-            $allcars = $this->getcarlist();
+            $allcars = $this->getallcarlist();
             foreach($allcars as $car){
                 if ($car->getid()===$id){
                     return $car;
@@ -51,7 +74,11 @@
         public function getnumberrow(){
             $link = null;
             taoKetNoi($link);
-            $result = chayTruyVanTraVeDL ($link, "select count(*) from tbl_car");
+            if(isset($_GET['dm'])){
+                $result = chayTruyVanTraVeDL($link, "select count(*) from tbl_car where id = ".$_GET["dm"]);
+            }else{
+                $result = chayTruyVanTraVeDL ($link, "select count(*) from tbl_car");
+            }
             $numberrow = mysqli_fetch_row($result);
             giaiPhongBoNho($link, $result);
             return $numberrow[0];
