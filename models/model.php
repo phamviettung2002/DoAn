@@ -83,5 +83,69 @@
             giaiPhongBoNho($link, $result);
             return $numberrow[0];
         }
+
+        // Hàm đăng nhập
+        public function Login($username, $password)
+        {
+            $link = null;
+            taoKetNoi($link);
+            $cautruyvan = "select * from tbl_user  where username = '$username' AND password='$password'";
+            $result = chayTruyVanTraVeDL($link, $cautruyvan);
+        
+            $count = mysqli_num_rows($result);
+            giaiPhongBoNho($link, $result);
+            
+            return $count;
+        }
+
+        // Hàm tìm kiếm
+        public function Search($keyword)
+        {
+            $link = null;
+            taoKetNoi($link);
+            $from = $this->getfrom();
+            $productofpage = $this->getproductofpage();
+        
+            $result = chayTruyVanTraVeDL($link, "select * from tbl_car where name like '%$keyword%'");
+            $data = array();
+            while ($rows = mysqli_fetch_assoc($result)) {
+                $car = new Car($rows["id"], $rows["name"], $rows["title"], $rows["price"], $rows["color"], $rows["image"], $rows["image1"], $rows["image2"], $rows["description"], $rows["numberofseats"], $rows["style"], $rows["fuel"], $rows["origin"], $rows["gear"]);
+                array_push($data, $car);
+            }
+            giaiPhongBoNho($link, $result);
+            return $data;
+        }
+
+        // Hàm đăng ký
+        public function Register($username, $password)
+        {
+            $link = null;
+            taoKetNoi($link);
+        
+            $result = chayTruyVanKhongTraVeDL($link, "INSERT INTO tbl_user (username, password) VALUES ('$username','$password')");
+        
+        }
+
+        // Hàm update
+        public function getupdatecar($carname, $cartitle, $carprice, $carimage, $carimage1, $carimage2, $cardescription, $carnumberofseats, $carstyle, $carfuel, $carorigin, $cargear, $id)
+        {
+            $link = null;
+            taoKetNoi($link);
+            $result = chayTruyVanKhongTraVeDL ($link, "update tbl_car set  name = '".$carname."',
+                                                                            title = '".$cartitle."',
+                                                                            price = '".$carprice."',
+                                                                            image = '".$carimage."',
+                                                                            image1 = '".$carimage1."',
+                                                                            image2 = '".$carimage2."',
+                                                                            description = '".$cardescription."',
+                                                                            numberofseats = '".$carnumberofseats."',
+                                                                            style = '".$carstyle."',
+                                                                            fuel = '".$carfuel."',
+                                                                            origin = '".$carorigin."',
+                                                                            gear = '".$cargear."'
+                                                                            where id = ".$id);
+            giaiPhongBoNho($link, $result);
+        }
+        
     }
 ?>

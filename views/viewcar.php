@@ -13,36 +13,40 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
 </head>
 <body>
+    <?php
+      echo $_SESSION["username"];
+    ?>
     <div class="container-fluid">
-        <div class="row row_header">
-            <div class="col-md-12 m-auto">
-                <nav class="navbar navbar-expand-sm navbar-light bg-light fixed-top">                  
-                            <a class="navbar-brand" href="index.php"><img src="./image/Toyota-Logo-1989-present-scaled.png" alt="logo" height="80" width="170"/></a>
-                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
-                                <span class="navbar-toggler-icon"></span>
-                            </button>
-                        
-                            <div class="collapse navbar-collapse" id="navbarResponsive" style="padding-left: 350px ;">
-                              <ul class="navbar-nav ml-auto" style="padding-right:50px ;">
-                                  <li class="nav-item active" style="padding-right:50px ;"><a class="nav-link" href="index.php" style="font-family: Times New Roman; font-size:24px ">Trang chủ</a></li>
-                                  <li class="nav-item active"><a class="nav-link" href="#" style="font-family: Times New Roman; font-size:24px">Danh sách</a></li>
+    <div class="row ">
+			<div class="col-md-12 m-auto">
+				<nav class="navbar navbar-expand-sm navbar-light bg-light fixed-top" style="height: 75px;">
+					<a class="navbar-brand" href="index.php"><img src="./image/Toyota-Logo-1989-present-scaled.png" alt="logo" height="80" width="170" /></a>
+					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+						<span class="navbar-toggler-icon"></span>
+					</button>
 
-                              </ul>
-                          
-                              <form class="form-inline my-2 my-lg-0">
-                                  <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" size="15">
-                                  <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                              </form>
+					<div class="collapse navbar-collapse" id="navbarResponsive" style = "padding-left: 350px;">
+						<ul class="navbar-nav ml-auto" style="padding-right:50px ;">
+							<li class="nav-item active" style="padding-right:50px ;"><a class="nav-link" href="index.php" style="font-family: Times New Roman; font-size:23px ">Trang chủ</a></li>
+							<li class="nav-item active"><a class="nav-link" href="" style="font-family: Times New Roman; font-size:23px">Danh sách</a></li>
+						</ul>
 
-                              <ul class="navbar-nav ml-auto">
-                                  <li class="nav-item active"><a class="nav-link" href="#" style="font-family: Times New Roman; font-size:24px ">Đăng nhập</a></li>
-                              </ul>
-                  </div>
-                </nav>
-            </div>
-        </div>
+						<form class="form-inline my-2 my-lg-0">
+							<input class="form-control mr-sm-2" type="search" name="search" placeholder="Search" aria-label="Search" size="15">
+							<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+						</form>
 
-        <div class="row row_headcontent" style="padding-top: 115px;">
+						<ul class="navbar-nav ml-auto">
+							<form action="" method="post">
+								<input type="submit" name="logout" value="Log out">
+							</form>
+						</ul>
+					</div>
+				</nav>
+			</div>
+		</div>
+
+        <div class="row row_headcontent" style="padding-top: 70px;">
             <div class="col-md-5" style="height:450px;">
                 <div id="carouselExampleIndicators" class="carousel slide col-12" data-ride="carousel" style="padding:0px; height: 100%;">
                     <ol class="carousel-indicators">

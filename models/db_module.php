@@ -21,6 +21,7 @@
         $result = mysqli_query($link, $q);
         return $result;
     }
+    
     function giaiPhongBoNho ($link, $result)
     {
         try{

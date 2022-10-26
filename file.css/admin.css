@@ -7,13 +7,22 @@
 .navbar-collapse{
     padding-left: 350px;
 }
+.col-md-12-tilte{
+    padding-bottom: 45px ;
+
+}
 .btn-create{
-    margin: 0 auto;
+    
     background-color: cornflowerblue;
-    color: white; border: 0px; 
+    color: white; 
+    border: 0px; 
     font-size: 30px; 
     width: 200px; 
     border-radius:4px;
+    
+}
+.btn-create:hover{
+    background-color: rgb(48, 117, 245);
 }
 .rowFooter{
 	background-color: #f8f9fa;
@@ -22,6 +31,7 @@
 .footer-line1{
     text-align: center;
 	padding: 10px;
+    
 }
 .ftr-media{
     color: black;
