@@ -20,7 +20,7 @@
 	<div class="container-fluid">
 		<div class="row ">
 			<div class="col-md-12 m-auto">
-				<nav class="navbar navbar-expand-sm navbar-light bg-light fixed-top" style="height: 75px;">
+				<nav class="navbar navbar-expand-sm navbar-light bg-light fixed-top">
 					<a class="navbar-brand" href="index.php"><img src="./image/Toyota-Logo-1989-present-scaled.png" alt="logo" height="80" width="170" /></a>
 					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
 						<span class="navbar-toggler-icon"></span>
@@ -47,7 +47,7 @@
 			</div>
 		</div>
 
-		<div class="row" id="rowbanner" style="padding-top: 60px;">
+		<div class="row" id="rowbanner" style="padding-top: 70px;">
 			<div id="carouselExampleIndicators" class="carousel slide col-12" data-ride="carousel">
 				<ol class="carousel-indicators">
 					<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>

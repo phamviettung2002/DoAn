@@ -12,6 +12,14 @@
     <div>
         <h1>Update Car</h2>
     </div>
+
+    <?php 
+        require_once ("models/model.php");
+        $getmethodofModel = new Model();
+        $car = $getmethodofModel->getCar($_GET["carid"]);
+    
+    ?>
+
     <form method = "post" action = "">
         <div class = "container">
             <div class = "row">
@@ -37,7 +45,7 @@
 
                 <div class = "col-md-6">
                     <label class = "lb" for="cardescription">Mô tả:</label>
-                    <input class = "btn-input" type="text" name = "cardescription" value = "<?php echo $car->getdescription(); ?>"><br/>
+                    <input class = "btn-input" style = "height: 100px; width: 500px" type="text" name = "cardescription" value = "<?php echo nl2br($car->getdescription()); ?>"><br/>
 
                     <label class = "lb" for="carnumberofseats">Số ghế:</label>
                     <input class = "btn-input" type="text" name = "carnumberofseats" value = "<?php echo $car->getnumberofseats(); ?>"><br/>
@@ -77,6 +85,9 @@
             $carfuel = $_POST['carfuel'];
             $carorigin = $_POST['carorigin'];
             $cargear = $_POST['cargear'];
+
+            require_once "models/md_updatecar.php";
+            getupdatecar($carname, $cartitle, $carprice, $carimage, $carimage1, $carimage2, $cardescription, $carnumberofseats, $carstyle, $carfuel, $carorigin, $cargear, $_GET["carid"]);
         }
         
     ?>

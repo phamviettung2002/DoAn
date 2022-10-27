@@ -18,7 +18,7 @@
     <div class="container-fluid">
     <div class="row ">
 			<div class="col-md-12 m-auto">
-				<nav class="navbar navbar-expand-sm navbar-light bg-light" style="height: 75px;">
+				<nav class="navbar navbar-expand-sm navbar-light bg-light fixed-top">
 					<a class="navbar-brand" href="index.php"><img src="./image/Toyota-Logo-1989-present-scaled.png" alt="logo" height="80" width="170" /></a>
 					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
 						<span class="navbar-toggler-icon"></span>
@@ -73,7 +73,7 @@
                             </div>
                             <div class="card-footer">
                                 <div class="d-flex justify-content-around">
-                                    <a href = "index.php?carid=<?php echo $car->getid(); ?>" class="btn btn-danger" >Update</a>
+                                    <a href = "updatecar.php?carid=<?php echo $car->getid(); ?>" class="btn btn-danger" >Update</a>
                                 </div>
                                 <div class="d-flex justify-content-around">
                                     <a href = "removecar.php?carid=<?php echo $car->getid(); ?>" class="btn btn-danger">Remove</a>

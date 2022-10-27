@@ -4,12 +4,12 @@
 {
 	color: blue;
 }
-.navbar-collapse{
-    padding-left: 350px;
+.navbar-expand-sm{
+    padding: 0px 55px 0px 55px;
 }
 .col-md-12-tilte{
+    padding-top: 80px ;
     padding-bottom: 45px ;
-
 }
 .btn-create{
     

@@ -4,8 +4,8 @@
 {
 	color: blue;
 }
-.navbar-collapse{
-    padding-left: 350px;
+.navbar-expand-sm{
+    padding: 0px 55px 0px 55px;
 }
 .rowFooter{
 	background-color: #f8f9fa;

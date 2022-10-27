@@ -19,13 +19,13 @@
     <div class="container-fluid">
     <div class="row ">
 			<div class="col-md-12 m-auto">
-				<nav class="navbar navbar-expand-sm navbar-light bg-light fixed-top" style="height: 75px;">
+				<nav class="navbar navbar-expand-sm navbar-light bg-light fixed-top" style="padding: 0px 55px 0px 55px;">
 					<a class="navbar-brand" href="index.php"><img src="./image/Toyota-Logo-1989-present-scaled.png" alt="logo" height="80" width="170" /></a>
 					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
 						<span class="navbar-toggler-icon"></span>
 					</button>
 
-					<div class="collapse navbar-collapse" id="navbarResponsive" style = "padding-left: 350px;">
+					<div class="collapse navbar-collapse" id="navbarResponsive">
 						<ul class="navbar-nav ml-auto" style="padding-right:50px ;">
 							<li class="nav-item active" style="padding-right:50px ;"><a class="nav-link" href="index.php" style="font-family: Times New Roman; font-size:23px ">Trang chủ</a></li>
 							<li class="nav-item active"><a class="nav-link" href="" style="font-family: Times New Roman; font-size:23px">Danh sách</a></li>
@@ -46,7 +46,7 @@
 			</div>
 		</div>
 
-        <div class="row row_headcontent" style="padding-top: 70px;">
+        <div class="row row_headcontent" style="padding-top: 80px;">
             <div class="col-md-5" style="height:450px;">
                 <div id="carouselExampleIndicators" class="carousel slide col-12" data-ride="carousel" style="padding:0px; height: 100%;">
                     <ol class="carousel-indicators">

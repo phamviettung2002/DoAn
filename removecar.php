@@ -48,7 +48,7 @@
 
                 <div class = "col-md-6">
                     <label class = "lb" for="cardescription">Mô tả:</label>
-                    <input class = "btn-input" type="text" name = "cardescription" value = "<?php echo $car->getdescription(); ?>" readonly><br/>
+                    <input class = "btn-input" type="text" name = "cardescription" value = "<?php echo nl2br($car->getdescription()); ?>" readonly><br/>
 
                     <label class = "lb" for="carnumberofseats">Số ghế:</label>
                     <input class = "btn-input" type="text" name = "carnumberofseats" value = "<?php echo $car->getnumberofseats(); ?>" readonly><br/>
