@@ -125,7 +125,7 @@
 
             <hr>
 
-            <div class="row mt-4 bg-light">
+            <div class="row mt-4 bg-light" style="padding-top:10px;">
                 <div class="col-4 col-md-4">
                     
                     <center><img src="image/promo-code.png" alt="Khuyến Mãi" width="50" height="50"></center>

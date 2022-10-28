@@ -1,7 +1,7 @@
 <?php
       require_once("controllers/controller.php");
       $controller = new Controller();
-
+      
 
       if (isset($_POST['logout'])) {
         unset($_SESSION['username']);
@@ -17,6 +17,8 @@
         if ($_POST['R_password']==$_POST['R_Cpassword']) 
         {
           $controller->Register($_POST['R_username'],$_POST['R_password']);
+          $_SESSION['username'] = $_POST['R_username'];
+          $_SESSION['password'] = $_POST['R_password'];
         }
       }
 

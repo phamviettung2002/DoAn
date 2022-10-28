@@ -121,7 +121,6 @@
         {
             $link = null;
             taoKetNoi($link);
-        
             $result = chayTruyVanKhongTraVeDL($link, "INSERT INTO tbl_user (username, password) VALUES ('$username','$password')");
         
         }

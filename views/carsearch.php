@@ -47,41 +47,13 @@
 			</div>
 		</div>
 
-		<div class="row" id="rowbanner" style="padding-top: 70px;">
-			<div id="carouselExampleIndicators" class="carousel slide col-12" data-ride="carousel">
-				<ol class="carousel-indicators">
-					<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-					<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-					<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-				</ol>
-				<div class="carousel-inner">
-					<div class="carousel-item active">
-						<img src="image/tmv-website_homepage_banner_1600x680_ew.png" alt="Banner" class="d-block w-100" style="height:100% ; width: 100%">
-					</div>
-					<div class="carousel-item">
-						<img src="image/home-banner-desktop.jpg" alt="Banner" class="d-block w-100" style="height:100% ; width: 100%">
-					</div>
-					<div class="carousel-item">
-						<img src="image/banner-raize.png" alt="Banner" class="d-block w-100" style="height:100% ; width: 100%">
-					</div>
-				</div>
-				<button class="carousel-control-prev" type="button" data-target="#carouselExampleIndicators" data-slide="prev">
-					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-					<span class="sr-only">Previous</span>
-				</button>
-				<button class="carousel-control-next" type="button" data-target="#carouselExampleIndicators" data-slide="next">
-					<span class="carousel-control-next-icon" aria-hidden="true"></span>
-					<span class="sr-only">Next</span>
-				</button>
-			</div>
-		</div>
 
 		<section class="container py-5">
-			<div class="row">
+			<div class="row" style = "padding-top:50px;">
 				<div class="col-lg-6 m-auto" style="padding-bottom: 25px;">
-					<h1>
-						<center>KHÁM PHÁ CÁC DÒNG XE </center>
-					</h1>
+					<h5>
+						<center>Kết quả tìm kiếm cho từ khóa "<?php echo $_GET["search"]; ?>"</center>
+					<h5>
 				</div>
 			</div>
 
@@ -124,7 +96,7 @@
 
 
 			<hr>
-			<div class="row mt-4 bg-light">
+			<div class="row mt-4 bg-light" style= "padding-top:10px;">
 				<div class="col-4 col-md-4">
 
 					<center><img src="image/promo-code.png" alt="Khuyến Mãi" width="50" height="50"></center>

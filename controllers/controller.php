@@ -19,7 +19,7 @@
                 
                 if (isset($_GET["search"])) {
                     $cars = $this->model->Search($_GET["search"]);
-                    include "views/carlist.php";
+                    include "views/carsearch.php";
                     return;
                 }
 
@@ -65,17 +65,25 @@
         
         public function invokeadmin()
         {
-            if(!isset($_GET["carid"])){
-                $cars = $this->model->getcarlistbypage();
-                include "views/admin.php";
+            if (isset($_SESSION['username']))
+            {
+                if (isset($_GET["search"])) {
+                    $cars = $this->model->Search($_GET["search"]);
+                    include "views/admin.php";
+                    return;
+                }
+
+                if(!isset($_GET["carid"])){
+                    $cars = $this->model->getcarlistbypage();
+                    include "views/admin.php";
+                }
+                else{
+                    $car = $this->model->getCar($_GET["carid"]);
+                    $carname = ""; $cartitle = ""; $carprice = ""; $carimage = ""; $carimage1 = ""; $carimage2 = ""; $cardescription = ""; $carnumberofseats = ""; $carstyle = ""; $carfuel = ""; $carorigin = ""; $cargear = "";
+                    include "views/updatecar.php";
+                    $this->model->getupdatecar($carname, $cartitle, $carprice, $carimage, $carimage1, $carimage2, $cardescription, $carnumberofseats, $carstyle, $carfuel, $carorigin, $cargear, $_GET["carid"]);
+                }
             }
-            else{
-                $car = $this->model->getCar($_GET["carid"]);
-                $carname = ""; $cartitle = ""; $carprice = ""; $carimage = ""; $carimage1 = ""; $carimage2 = ""; $cardescription = ""; $carnumberofseats = ""; $carstyle = ""; $carfuel = ""; $carorigin = ""; $cargear = "";
-                include "views/updatecar.php";
-                $this->model->getupdatecar($carname, $cartitle, $carprice, $carimage, $carimage1, $carimage2, $cardescription, $carnumberofseats, $carstyle, $carfuel, $carorigin, $cargear, $_GET["carid"]);
-            }
-            
         }
     }
 ?>
