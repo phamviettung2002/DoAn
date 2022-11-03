@@ -36,11 +36,6 @@
 
                     <label class = "lb" for="carimage2">Hình 2:</label>
                     <input class = "btn-input" type="text" name = "carimage2"><br/>
-                </div>
-
-                <div class = "col-md-6">
-                    <label class = "lb" for="cardescription">Mô tả:</label>
-                    <input class = "btn-input" type="text" name = "cardescription"><br/>
 
                     <label class = "lb" for="carnumberofseats">Số ghế:</label>
                     <input class = "btn-input" type="text" name = "carnumberofseats"><br/>
@@ -56,6 +51,11 @@
 
                     <label class = "lb" for="cargear">Hộp số:</label>
                     <input class = "btn-input" type="text" name = "cargear"><br/>
+                </div>
+
+                <div class = "col-md-6">
+                    <label class = "lb" for="cardescription">Mô tả sản phẩm:</label><br/>
+                    <textarea class = "btn-input" type="text" name = "cardescription" rows="17" cols="62" style = "margin-left: 0px;"></textarea>
                 </div>
             </div>
 
