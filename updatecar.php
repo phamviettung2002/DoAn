@@ -41,11 +41,6 @@
 
                     <label class = "lb" for="carimage2">Hình 2:</label>
                     <input class = "btn-input" type="text" name = "carimage2" value = "<?php echo $car->getimage2(); ?>"><br/>
-                </div>
-
-                <div class = "col-md-6">
-                    <label class = "lb" for="cardescription">Mô tả:</label>
-                    <input class = "btn-input"  type="text" name = "cardescription" value = "<?php echo nl2br($car->getdescription()); ?>"><br/>
 
                     <label class = "lb" for="carnumberofseats">Số ghế:</label>
                     <input class = "btn-input" type="text" name = "carnumberofseats" value = "<?php echo $car->getnumberofseats(); ?>"><br/>
@@ -61,6 +56,11 @@
 
                     <label class = "lb" for="cargear">Hộp số:</label>
                     <input class = "btn-input" type="text" name = "cargear" value = "<?php echo $car->getgear(); ?>"><br/>
+                </div>
+
+                <div class = "col-md-6">
+                    <label class = "lb" for="cardescription">Mô tả:</label>
+                    <textarea class = "btn-input"  type="text" name = "cardescription" rows="17" cols="62" style = "margin-left: 0px;"><?php echo $car->getdescription(); ?></textarea>
                 </div>
             </div>
 
