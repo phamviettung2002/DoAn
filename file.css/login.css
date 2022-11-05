@@ -16,9 +16,11 @@
     height: 480px;
     position: relative;
     margin: 6% auto;
-    background: #fff;
+    background: white;
     padding: 5px;
     overflow: hidden;
+    box-shadow: 0 0 10px black;
+    border-radius: 10px;
 }
 .button-box{
     width: 220px;
@@ -45,7 +47,7 @@
     transition: .5s;
 }
 .input-group{
-    top: 180px;
+    top: 154px;
     position: absolute;
     width: 280px;
     transition: .5s;
@@ -61,6 +63,12 @@
     outline: none;
     background: transparent;
 }
+.eye{
+    position: absolute;
+    right: -20px;
+    top: 61px;
+}
+
 .submit-btn{
     width: 85%;
     padding: 10px 30px;
@@ -73,7 +81,7 @@
     border-radius: 30px;
 }
 .check-box{
-    margin: 19px 13px 36px 0;
+    margin: 19px 13px 36px 5px;
 }
 span{
     color:#777;
