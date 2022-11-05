@@ -36,7 +36,7 @@
 						</form>
 
 						<ul class="navbar-nav ml-auto">
-							<form action="" method="post">
+							<form action="index.php" method="post">
 								<input type="submit" name="logout" value="Log out">
 							</form>
 						</ul>
