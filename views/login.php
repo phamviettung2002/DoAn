@@ -29,8 +29,8 @@
             </form>
             <form class="input-group" id="Register" method="POST">
                 <input type="text" class="input-field" name="R_username" placeholder="Username" required>
-                <input type="text" class="input-field check" id="R_password" name="R_password" placeholder="Enter Password" required>
-                <input type="text" class="input-field check" id="R_Cpassword" name="R_Cpassword" placeholder="Confirm Password" required>
+                <input type="password" class="input-field check" id="R_password" name="R_password" placeholder="Enter Password" required>
+                <input type="password" class="input-field check" id="R_Cpassword" name="R_Cpassword" placeholder="Confirm Password" required>
                 <div id="warning"></div>
                 <input type="checkbox" class="check-box">
                 <span>I agree to the terms & condition</span>
