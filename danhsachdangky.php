@@ -1,137 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0 , shrink-to-fit=no">
-	<title>ToYoTa VN</title>
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
 	<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="file.css/home.css">
 </head>
-
 <body>
-	<?php
-		echo $_SESSION["username"];
-	?>
-	<div class="container-fluid">
-		<div class="row ">
-			<div class="col-md-12 m-auto">
-					<nav class="navbar navbar-expand-lg fixed-top" style="background-color: #5837D0;">
-						<a class="navbar-brand text-white" href="index.php"><img src="./image/logo_toyota.png" alt="LOGGO" with="25" height="50"></a>
-						<button class="navbar-toggler navbar-light bg-light" type="button" data-toggle="collapse" data-target="#navbarResponsive">
-							<span class="navbar-toggler-icon"></span>
-						</button>
+    <?php
+    session_start();
+    ?>
+    <div class="container-fluid">
+        <div class="row ">
+            <div class="col-md-12 m-auto">
+                <nav class="navbar navbar-expand-lg fixed-top" style="background-color: #5764c5;">
+                    <a class="navbar-brand text-white" href="index.php"><img src="./image/logo_toyota.png" alt="LOGGO" with="25" height="50"></a>
+                    <button class="navbar-toggler navbar-light bg-light" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
 
-						<div class="collapse navbar-collapse" id="navbarResponsive" >
-							<ul class="navbar-nav ml-auto" style="padding-right:50px ;">
-								<li class="nav-item active" style="padding-right:50px ;"><a class="nav-link" href="index.php" style="font-family: Times New Roman; font-size:22px;color: white;"><span><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-house-door" viewBox="0 0 20 20">
-								  <path d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146zM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4H2.5z"/>
-								</svg>TRANG CHỦ</span></a></li>
-								<li class="nav-item active"><a class="nav-link" href="danhsachdangky.php" style="font-family: Times New Roman; font-size:22px; color: white;"><span><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-list-task" viewBox="0 0 18 18">
-								  <path fill-rule="evenodd" d="M2 2.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5V3a.5.5 0 0 0-.5-.5H2zM3 3H2v1h1V3z"/>
-								  <path d="M5 3.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zM5.5 7a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1h-9zm0 4a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1h-9z"/>
-								  <path fill-rule="evenodd" d="M1.5 7a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H2a.5.5 0 0 1-.5-.5V7zM2 7h1v1H2V7zm0 3.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5H2zm1 .5H2v1h1v-1z"/>
-								</svg>DANH SÁCH</span></a></li>
-							</ul>
+                    <div class="collapse navbar-collapse" id="navbarResponsive" >
+                        <ul class="navbar-nav ml-auto" style="padding-right:50px ;">
+                            <li class="nav-item active" style="padding-right:50px ;"><a class="nav-link" href="index.php" style="font-family: Times New Roman; font-size:22px;color: white;"><span><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-house-door" viewBox="0 0 20 20">
+                                <path d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146zM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4H2.5z"/>
+                            </svg>TRANG CHỦ</span></a></li>
+                            <li class="nav-item active"><a class="nav-link" href="danhsachdangky.php" style="font-family: Times New Roman; font-size:22px; color: white;"><span><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-list-task" viewBox="0 0 18 18">
+                                <path fill-rule="evenodd" d="M2 2.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5V3a.5.5 0 0 0-.5-.5H2zM3 3H2v1h1V3z"/>
+                                <path d="M5 3.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zM5.5 7a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1h-9zm0 4a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1h-9z"/>
+                                <path fill-rule="evenodd" d="M1.5 7a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H2a.5.5 0 0 1-.5-.5V7zM2 7h1v1H2V7zm0 3.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5H2zm1 .5H2v1h1v-1z"/>
+                            </svg>DANH SÁCH</span></a></li>
+                        </ul>
 
-							<form class="form-inline my-2 my-lg-0">
-								<input class="form-control mr-sm-2" type="search" name="search" placeholder="Search here..." aria-label="Search" size="15">
-								<button class="btn btn-outline-light my-2 my-sm-0" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-search" viewBox="0 0 18 18">
-								  <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
-								</svg></button>
-							</form>
+                        <form class="form-inline my-2 my-lg-0">
+                            <input class="form-control mr-sm-2" type="search" name="search" placeholder="Search here..." aria-label="Search" size="15">
+                            <button class="btn btn-outline-light my-2 my-sm-0" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-search" viewBox="0 0 18 18">
+                                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                            </svg></button>
+                        </form>
 
-							<ul class="navbar-nav ml-auto">
-								<form action="" method="post">
-									<input class="btn btn-outline-light" type="submit" name="logout" value="LOG OUT">
-								</form>
-							</ul>
-						</div>
-					</nav>
-				</div>
+                        <ul class="navbar-nav ml-auto">
+                            <form action="" method="post">
+                                <input class="btn btn-outline-light" type="submit" name="logout" value="LOG OUT">
+                            </form>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
 
+        
+            <div style = "padding-top: 120px; padding-bottom: 50px">
+                <h1><center>Danh sách xe đã đăng ký</center></h1>
+            </div> <br>
+            
+            <div>
+                <?php
+                    require_once("models/model.php");
+                    
+                    echo '
+                    <table class="table cart-table">
+                        <thead>
+                            <th style = "font-size: 20px; padding-left: 70px;">STT</th>
+                            <th style="font-size: 20px">Tên xe</th>
+                            <th style="font-size: 20px">Đại lý</th>
+                            <th style="font-size: 20px">Thời gian lái</th>
+                        </thead>
+                        <tbody>';
 
-		<section class="container py-5">
-			<div class="row" style = "padding-top:50px;">
-				<div class="col-lg-6 m-auto" style="padding-bottom: 25px;">
-					<h5>
-						<center>Kết quả tìm kiếm cho từ khóa "<?php echo $_GET["search"]; ?>"</center>
-					<h5>
-				</div>
-			</div>
+                            $danhsachdangky = new Model();
+                            $tam = $danhsachdangky -> getcarsub($_SESSION['username']);
 
-			<div class="row row-cols-1 row-cols-md-3">
+                            $stt = 1;
+                            foreach ($tam as $item) {
+                                $tenxe = $item->getten_xe();
+                                $tendaily = $item->getten_daily();
+                                $thoigianlai = $item->getthoigianlai();
+                                echo '
+                                <tr>
+                                    <td style="padding-left: 70px; font-size: 20px">' . $stt . '</td>
+                                    <td style="font-size: 20px">' . $tenxe . '</td>
+                                    <td style="font-size: 20px">' . $tendaily . '</td>
+                                    <td style="font-size: 20px">' . $thoigianlai . '</td>
+                                </tr>';
+                                
+                                $stt++;
+                            }
+                        
+                        echo
+                        '</tbody>
+                    </table>';
+                ?> 
+            </div>
 
-				<!-- Hiển thị sản phẩm -->
-				<?php foreach ($cars as $car) : ?>
-					<div class="col mb-4">
-						<div class="card">
-							<img src="<?php echo $car->getimage(); ?>" class="card-img-top" alt="car1" style="height:240px;">
-							<div class="card-body">
-								<h4 class="card-title"><?php echo $car->getname(); ?></h4>
-								<small class="card-title text-muted">
-									<h6><?php echo $car->gettitle(); ?></h6>
-								</small>
-								<h5 class="card-title">
-									<font color="red"><?php echo $car->getprice(); ?></font> VND
-								</h5>
-								<p class="card-text">•Số chỗ ngồi: <?php echo $car->getnumberofseats(); ?><br />
-									•Kiểu dáng: <?php echo $car->getstyle(); ?><br />
-									•Nguyên liệu: <?php echo $car->getfuel(); ?><br />
-									•Xuất xứ: <?php echo $car->getorigin(); ?><br />
-									•Hộp số: <?php echo $car->getgear(); ?>
-								</p>
-							</div>
-							<div class="card-footer">
-								<div class="d-flex justify-content-around">
-									<a href="index.php?carid=<?php echo $car->getid(); ?>" class="btn btn-danger">Chi tiết</a>
-								</div>
-							</div>
-						</div>
-					</div>
-				<?php endforeach; ?>
-			</div>
-
-
-
-
-			<hr>
-			<div class="row mt-4 bg-light" style= "padding-top:10px;">
-				<div class="col-4 col-md-4">
-
-					<center><img src="image/promo-code.png" alt="Khuyến Mãi" width="50" height="50"></center>
-					<p>
-					<h6>
-						<center>ƯU ĐÃI VOUCHER</center>
-					</h6>
-					</p>
-
-				</div>
-				<div class="col-4 col-md-4">
-					<center><img src="image/pricing.png" alt="Khuyến Mãi" width="50" height="50"></center>
-					<p>
-					<h6>
-						<center>GIÁ CẢ HỢP LÝ</center>
-					</h6>
-					</p>
-				</div>
-				<div class="col-4 col-md-4">
-					<center><img src="image/steering-wheel.png" alt="Khuyến Mãi" width="50" height="50"></center>
-					<p>
-					<h6>
-						<center>TRẢI NGHIỆM LÁI THỬ</center>
-					</h6>
-					</p>
-				</div>
-			</div>
-			<hr>
-		</section>
-
-		<div class="row rowFooter">
+            <div class="row rowFooter" style= "margin-top: 250px">
 			<div class="col col-Footer" style="padding-left: 50px; padding-right: 50px;">
 				<h4 class="footer-line1">Thông tin liên hệ</h4>
 				<p>
@@ -193,8 +159,7 @@
 				</a>
 			</div>
 		</div>
-	</div>
-	
+     
+    </div>   
 </body>
-
 </html>

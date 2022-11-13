@@ -22,7 +22,7 @@
 
     <form method = "post" action = "">
         <div class = "container">
-            <div class = "row">
+        <div class = "row">
                 <div class = "col-md-6">
                     <label class = "lb" for="id">Id xe:</label>
                     <input class = "btn-input" type="text" name = "id" value = "<?php echo $car->getid(); ?>" readonly> <br/>

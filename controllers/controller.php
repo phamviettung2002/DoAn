@@ -12,6 +12,7 @@
         }
         public function invoke()
         {
+
             if (isset($_SESSION['username']))
             {
                 //Tổng số sản phẩm
@@ -22,10 +23,26 @@
                     include "views/carsearch.php";
                     return;
                 }
-
+				if(isset($_GET["dklt"]))
+				{
+                    $listcars = $this->model->getallcarlist();
+					$tinhthanhpholist = $this->model->getalltinhthanhpholist();
+					$dailylist=$this->model->getalldailylist();
+                    include "views/dangkylaithu.php";
+					return;
+                }
+				if(isset($_POST["hovaten"])&&isset($_POST["sodienthoai"])&&isset($_POST["tenxe"])&&isset($_POST["tinhthanhpho"])&&isset($_POST["daily"])&&isset($_POST["ngaydukien"]))
+				{
+					$ttp =$this->model->gettinhthanhpho($_POST['tinhthanhpho']);
+					$this->model->insert_dklt($_POST["hovaten"],$_POST["tenxe"],$_POST["daily"],$_POST["sodienthoai"],$ttp->getten_tinhthanhpho(),$_POST["ngaydukien"],$_SESSION['username'] );
+					$car = $this->model->getCar($_POST["tenxe"]);
+					$daily=$this->model->getdaily($_POST['daily']);
+					include"views/dangkylaithusubmit.php";
+					return;
+                }
                 if(!isset($_GET["carid"])){
                     $cars = $this->model->getcarlistbypage();
-                    include "views/home.php";
+                    include"views/home.php";
                 }
                 else
                 {
@@ -46,6 +63,7 @@
                     }
                     include "views/viewcar.php";
                 }
+				
             }   
         }
 

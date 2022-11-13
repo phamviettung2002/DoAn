@@ -1,7 +1,10 @@
 <?php
     require_once("models/car.php");
+	require_once("models/daily.php");
+	require_once("models/tinhthanhpho.php");
+	require_once("models/dangkylaithu.php");
     require_once("models/db_module.php");
-
+    require_once("models/danhsach.php");
     class Model 
     {
         public function getproductofpage(){
@@ -48,10 +51,25 @@
         {
             $link = null;
             taoKetNoi($link);
-            $result = chayTruyVanTraVeDL ($link, "select * from tbl_car ");
+            $result = chayTruyVanTraVeDL ($link, "select * from tbl_car");
             $data = array ();
             while ($rows = mysqli_fetch_assoc($result)){
                 $car = new Car ($rows["id"], $rows["name"], $rows["title"], $rows["price"], $rows["color"], $rows["image"], $rows["image1"], $rows["image2"], $rows["description"], $rows["numberofseats"], $rows["style"], $rows["fuel"], $rows["origin"], $rows["gear"]);
+                array_push($data, $car);
+            }
+            giaiPhongBoNho($link, $result);
+            return $data;
+        }
+
+        //Lấy danh sách xe đã đăng ký
+        public function getcarsub ($username)
+        {
+            $link = null;
+            taoKetNoi($link);
+            $result = chayTruyVanTraVeDL ($link, "SELECT tbl_car.name, tbl_daily.ten_daily, tbl_dangkylaithu.ngaydukien FROM (tbl_car INNER JOIN tbl_dangkylaithu ON tbl_car.id = tbl_dangkylaithu.id_car) INNER JOIN tbl_daily ON tbl_dangkylaithu.id_daily = tbl_daily.id_daily WHERE tbl_dangkylaithu.username =".$username);
+            $data = array ();
+            while ($rows = mysqli_fetch_assoc($result)){
+                $car = new danhsach ($rows["name"], $rows["ten_daily"], $rows["ngaydukien"]);
                 array_push($data, $car);
             }
             giaiPhongBoNho($link, $result);
@@ -123,6 +141,76 @@
             taoKetNoi($link);
             $result = chayTruyVanKhongTraVeDL($link, "INSERT INTO tbl_user (username, password) VALUES ('$username','$password')");
         
+        }
+		//hàm lấy danh sách tất cả các thành phố
+		 public function getalltinhthanhpholist()
+        {
+            $link = null;
+            taoKetNoi($link);
+            $result = chayTruyVanTraVeDL($link, "select * from tbl_tinhthanhpho");
+            $data = array ();
+            while ($rows = mysqli_fetch_assoc($result)){
+                $tinhthanhpho = new tinhthanhpho($rows["id_tinhthanhpho"], $rows["ten_tinhthanhpho"]);
+                array_push($data, $tinhthanhpho);
+            }
+            giaiPhongBoNho($link, $result);
+            return $data;
+        }
+		//hàm lấy danh sách tất cả các đại lý
+		 public function getalldailylist()
+        {
+            $link = null;
+            taoKetNoi($link);
+            $result = chayTruyVanTraVeDL ($link, "select * from tbl_daily");
+            $data = array ();
+            while ($rows = mysqli_fetch_assoc($result)){
+                $daily = new daily($rows["id_daily"], $rows["ten_daily"],$rows["id_tinhthanhpho"]);
+                array_push($data, $daily);
+            }
+            giaiPhongBoNho($link, $result);
+            return $data;
+        }
+		//hàm lấy danh sách đại lý theo thành phố
+		 public function getdaily_thanhpho($key)
+        {
+            $link = null;
+            taoKetNoi($link);
+            $result = chayTruyVanTraVeDL ($link, "select * from tbl_daily where id_tinhthanhpho='$key'");
+            $data = array ();
+            while ($rows = mysqli_fetch_assoc($result)){
+                $daily = new daily($rows["id_daily"], $rows["ten_daily"],$rows["id_tinhthanhpho"]);
+                array_push($data, $daily);
+            }
+            giaiPhongBoNho($link, $result);
+            return $data;
+        }
+		//thêm dữ liệu trên bảng đăng ký lái thử
+		 public function insert_dklt($hovaten,$id_car,$id_daily,$sodienthoai,$ten_tinhthanhpho,$ngaydukien, $username)
+        {
+            $link = null;
+            taoKetNoi($link);
+            $result = chayTruyVanKhongTraVeDL($link, "INSERT INTO tbl_dangkylaithu VALUES ('$hovaten','$id_car','$id_daily','$sodienthoai','$ten_tinhthanhpho','$ngaydukien','$username')");
+        }
+		// Lấy tỉnh thành phố theo id
+        public function gettinhthanhpho($id_tinhthanhpho)
+        {
+            $alltinhthanhpho = $this->getalltinhthanhpholist();
+            foreach($alltinhthanhpho as $ttp){
+                if ($ttp->getid_tinhthanhpho()===$id_tinhthanhpho){
+                    return $ttp;
+                }
+            }
+            return null;   
+        }
+		public function getdaily($id_daily)
+        {
+            $alldaily = $this->getalldailylist();
+            foreach($alldaily as $dl){
+                if ($dl->getid_daily()===$id_daily){
+                    return $dl;
+                }
+            }
+            return null;   
         }
     }
 ?>

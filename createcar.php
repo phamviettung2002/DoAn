@@ -14,7 +14,7 @@
     </div>
     <form method = "post" action = "">
         <div class = "container">
-            <div class = "row">
+        <div class = "row">
                 <div class = "col-md-6">
                     <label class = "lb" for="carname">Tên xe:</label>
                     <input class = "btn-input" type="text" name = "carname"> <br/>
