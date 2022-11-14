@@ -66,7 +66,7 @@
         {
             $link = null;
             taoKetNoi($link);
-            $result = chayTruyVanTraVeDL ($link, "SELECT tbl_car.name, tbl_daily.ten_daily, tbl_dangkylaithu.ngaydukien FROM (tbl_car INNER JOIN tbl_dangkylaithu ON tbl_car.id = tbl_dangkylaithu.id_car) INNER JOIN tbl_daily ON tbl_dangkylaithu.id_daily = tbl_daily.id_daily WHERE tbl_dangkylaithu.username =".$username);
+            $result = chayTruyVanTraVeDL ($link, "SELECT tbl_car.name, tbl_daily.ten_daily, tbl_dangkylaithu.ngaydukien FROM (tbl_car INNER JOIN tbl_dangkylaithu ON tbl_car.id = tbl_dangkylaithu.id_car) INNER JOIN tbl_daily ON tbl_dangkylaithu.id_daily = tbl_daily.id_daily WHERE tbl_dangkylaithu.username ="."'$username'");
             $data = array ();
             while ($rows = mysqli_fetch_assoc($result)){
                 $car = new danhsach ($rows["name"], $rows["ten_daily"], $rows["ngaydukien"]);
