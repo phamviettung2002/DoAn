@@ -98,3 +98,16 @@
     height: 32px;
     width: 32px;
 }
+input.btn.btn-outline-light{
+    border: 0px;
+}
+input.btn.btn-outline-light:hover{
+    background-color: transparent;
+    color:blue ;
+}
+svg.bi.bi-box-arrow-right{
+    position: absolute;
+    top: 31px;
+    right: 96px;
+    color: white;
+}
