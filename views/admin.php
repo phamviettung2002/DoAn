@@ -69,7 +69,7 @@
                             <div class="card-body">
                                 <h4 class="card-title"><?php echo $car->getname(); ?></h4>
                                 <small class="card-title text-muted" ><h6><?php echo $car->gettitle(); ?></h6></small>
-                                <h5 class="card-title"><font color="red"><?php echo $car->getprice(); ?></font> VND</h5>
+                                <h5 class="card-title"><font color="red"><?php echo $car->getprice(); ?></font> / LẦN (2 GIỜ)</h5>
                                 <p class="card-text">•Số chỗ ngồi: <?php echo $car->getnumberofseats(); ?><br/>
                                                     •Kiểu dáng: <?php echo $car->getstyle(); ?><br/>
                                                     •Nguyên liệu: <?php echo $car->getfuel(); ?><br/>

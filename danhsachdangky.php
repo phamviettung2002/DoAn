@@ -76,7 +76,7 @@
                         <thead>
                             <th style = "font-size: 20px">STT</th>
                             <th style="font-size: 20px">Tên xe</th>
-                            <th style="font-size: 20px">Đại lý</th>
+                            
                             <th style="font-size: 20px">Thời gian lái</th>
                         </thead>
                         <tbody>';
@@ -87,13 +87,12 @@
             $stt = 1;
             foreach ($tam as $item) {
                 $tenxe = $item->getten_xe();
-                $tendaily = $item->getten_daily();
                 $thoigianlai = $item->getthoigianlai();
                 echo '
                                 <tr>
                                     <td style="font-size: 20px">' . $stt . '</td>
                                     <td style="font-size: 20px">' . $tenxe . '</td>
-                                    <td style="font-size: 20px">' . $tendaily . '</td>
+                                    
                                     <td style="font-size: 20px">' . $thoigianlai . '</td>
                                 </tr>';
 

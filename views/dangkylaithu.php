@@ -95,30 +95,8 @@
 							  ?>
 						  </select>
 						</div>
-						<div class="form-group mx-5">
-						  <label for="tinhthanhpho">Tỉnh/Thành Phố*</label>
-						  <select class="custom-select" id="tinhthanhpho" name="tinhthanhpho" required>
-							<option selected disabled value="">Chọn</option>
-							<?php
-							  	foreach($tinhthanhpholist as $ttp)
-								{
-									echo("<option value='".$ttp->getid_tinhthanhpho()."'>'".$ttp->getten_tinhthanhpho()."'</option>");	
-								}
-							  ?>
-						  </select>
-						</div>
-						<div class="form-group mx-5">
-						  <label for="daily">Đại Lý*</label>
-						  <select class="custom-select" id="daily" name="daily" required>
-							<option selected disabled value="">Chọn</option>
-							  <?php
-							  	foreach($dailylist as $dl)
-								{
-									echo("<option value='".$dl->getid_daily()."'>'".$dl->getten_daily()."'</option>");	
-								}
-							  ?>
-						  </select>
-						</div>
+						
+						
 						<div class="form-group mx-5">
 						  <label for="ngaydukien">Ngày Dự Kiến*</label>
 						  <input type="date" class="form-control" id="ngaydukien" name="ngaydukien" placeholder="12/11/2022" required>

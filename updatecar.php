@@ -88,6 +88,9 @@
 
             require_once "models/md_updatecar.php";
             getupdatecar($carname, $cartitle, $carprice, $carimage, $carimage1, $carimage2, $cardescription, $carnumberofseats, $carstyle, $carfuel, $carorigin, $cargear, $_GET["carid"]);
+            $message = "Bạn cập nhật thành công";
+                echo "<script type='text/javascript'>alert('$message');</script>";
+            
         }
         
     ?>

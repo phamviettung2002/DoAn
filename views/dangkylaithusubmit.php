@@ -62,14 +62,11 @@
 			</div>
 			<div class="row-cols-1 mx-lg-5">
 				<div class="col mx-md-5">
-					<div class="mb-md-5">
+					<div class="mb-md-5" style ="padding-top: 40px">
 						<h1 class="text-center">HOÀN TẤT ĐĂNG KÝ </h1>						
 					</div>
 					<div>
-						<section>
-							<h3>Cảm ơn quý khách đã đăng kí lái thử</h3>
-							<p><h4 class="d-none d-md-block">Xin cảm ơn Quý khách đã tin tưởng và sử dụng dịch vụ của chúng tôi. Chúng tôi xin xác nhận thông tin đăng ký của Quý khách như sau:</h4></p>
-						</section>
+						
 						
 						<section class="mx-5">
 							<p><h5>Thông tin khách hàng</h5></p>
@@ -81,21 +78,20 @@
 							<p><h5>Thông tin dịch vụ</p></h5>
 							<p style="font-size: 13pt;">- Tên xe:<?php echo " ".$car->getname();?></p>
 							<p style="font-size: 13pt;">- Thời gian:<?php echo(" ".date("d/m/Y",strtotime($_POST['ngaydukien'])));?></p>
-							<p style="font-size: 13pt;">- Địa điểm:<?php echo " ".$ttp->getten_tinhthanhpho();?></p>
-							<p style="font-size: 13pt;">- Đại lý:<?php echo " ".$daily->getten_daily();?></p>
+							
 						</section>
-						<section class="mx-5">
+						<section class="mx-5" style ="padding-top: 30px">
 							<p class="text-center" style="font-size: 13pt;">Nhân viên tư vấn bán hàng sẽ liên hệ với Quý khách để xác nhận lịch hẹn trong thời gian sớm nhất. Xin trân trọng cảm ơn!</p>
 						</section>
 						<section>
 							<p><h5 class="mx-5">Mẫu xe đã chọn:</h5></p>
 							<hr style="background-color:#5837D0;">
-							<div>
-							<?php
-								
-							  	echo("<img src='".$car->getimage1()."'>");
-								echo("<p style='font-size: 14pt;'>'".$car->getname()."'</p>");
-							  ?>
+							<div style="height: 290px; width: 266px">
+								<img src="<?php echo $car->getimage1(); ?>" alt="Banner" class="d-block w-100" style="height:100% ; width: 100%">
+								<?php								
+									echo("<p style='font-size: 16pt;'>'".$car->getname()."'</p>");
+								?>
+
 							</div>
 						</section>
 					</div>

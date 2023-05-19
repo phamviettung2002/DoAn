@@ -80,6 +80,8 @@
         if (isset($_POST['id'])){
             require_once "models/md_removecar.php";
             getremovecar($_POST['id']);
+            $message = "Bạn đã xóa thành công";
+                echo "<script type='text/javascript'>alert('$message');</script>";
         }
     ?>
 </body>

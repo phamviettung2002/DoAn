@@ -107,7 +107,7 @@
 									<h6><?php echo $car->gettitle(); ?></h6>
 								</small>
 								<h5 class="card-title">
-									<font color="red"><?php echo $car->getprice(); ?></font> VND
+									<font color="red"><?php echo $car->getprice(); ?></font> / LẦN (2 GIỜ)
 								</h5>
 								<p class="card-text">•Số chỗ ngồi: <?php echo $car->getnumberofseats(); ?><br />
 									•Kiểu dáng: <?php echo $car->getstyle(); ?><br />
