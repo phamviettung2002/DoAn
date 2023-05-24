@@ -40,3 +40,6 @@ svg.bi.bi-box-arrow-right{
     right: 96px;
     color: white;
 }
+.input-group-addon{
+    padding-right: 10px;
+}

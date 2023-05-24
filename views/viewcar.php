@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/02dbb38eba.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -35,12 +36,38 @@
 								</svg>DANH SÁCH</span></a></li>
 							</ul>
 
-							<form class="form-inline my-2 my-lg-0">
-								<input class="form-control mr-sm-2" type="search" name="search" placeholder="Search here..." aria-label="Search" size="15">
-								<button class="btn btn-outline-light my-2 my-sm-0" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-search" viewBox="0 0 18 18">
-								  <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
-								</svg></button>
-							</form>
+              <form class="form-inline my-2 my-lg-0">
+							<input id ="search-input" class="form-control mr-sm-2" type="search" name="search" placeholder="Search here..." aria-label="Search" size="15">
+							<span id = "voice-btn" class="input-group-addon"><i class="fa-solid fa-microphone"></i></span>
+							<script>
+									const searchInput = document.getElementById('search-input');
+									const voiceBtn = document.getElementById('voice-btn');
+
+									if ('webkitSpeechRecognition' in window) {
+										const recognition = new webkitSpeechRecognition();
+
+										recognition.continuous = false;
+										recognition.interimResults = false;
+										recognition.lang = 'vi-VN';
+										recognition.onresult = function(event) {
+										const result = event.results[0][0].transcript;
+										searchInput.value = result;
+										}
+										recognition.onstart = function() {
+										voiceBtn.classList.add('active');
+										}
+										recognition.onend = function() {
+										voiceBtn.classList.remove('active');
+										}
+										voiceBtn.addEventListener('click', function() {
+										recognition.start();
+										});
+									}
+								</script>
+							<button  class="btn btn-outline-light my-2 my-sm-0" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-search" viewBox="0 0 18 18">
+									<path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+							    </svg></button>
+						</form>
 
 							<ul class="navbar-nav ml-auto">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
