@@ -46,8 +46,8 @@
                 }
                 else
                 {
+                    $_SESSION['carid']=$_GET['carid'];
                     $car = $this->model->getCar($_GET["carid"]);
-                    
                     $numberrow = $this->model->getnumberrow();
                     $a = rand(1, $numberrow);
                     $b = rand(1, $numberrow);
@@ -61,6 +61,14 @@
                             $b = rand(1, $numberrow);
                         }
                     }
+                    if (isset($_POST['submit'])) {
+                        $name = $_SESSION['username'];  
+                        $comment = $_POST['comment'];
+                        $carid = $_SESSION['carid'];
+                  Model::addComment($name,$carid,$comment);
+                      }
+                    $comments = $this->model->getListComment($_SESSION['carid']);
+                  
                     include "views/viewcar.php";
                 }
 				

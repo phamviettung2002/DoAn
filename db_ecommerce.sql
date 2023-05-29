@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th5 19, 2023 lúc 06:27 PM
+-- Thời gian đã tạo: Th5 28, 2023 lúc 04:21 PM
 -- Phiên bản máy phục vụ: 10.4.24-MariaDB
 -- Phiên bản PHP: 8.1.6
 
@@ -20,6 +20,62 @@ SET time_zone = "+00:00";
 --
 -- Cơ sở dữ liệu: `db_ecommerce`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `comments`
+--
+
+CREATE TABLE `comments` (
+  `id` int(11) NOT NULL,
+  `username` varchar(255) NOT NULL,
+  `carid` int(11) NOT NULL,
+  `comment` text NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Đang đổ dữ liệu cho bảng `comments`
+--
+
+INSERT INTO `comments` (`id`, `username`, `carid`, `comment`, `created_at`) VALUES
+(142, '1', 3, 'hay', '2023-05-26 16:51:51'),
+(143, '1', 3, 'đẹp', '2023-05-26 16:51:58'),
+(144, '2', 3, 'good', '2023-05-26 16:52:24'),
+(145, 'nhom', 3, 'sdsas', '2023-05-26 16:52:48'),
+(146, 'nhom', 2, 'dsAD', '2023-05-26 16:53:09'),
+(147, 'nhom', 1, 'dsaSAD', '2023-05-26 16:53:20'),
+(148, 'tung', 1, 'áSDA', '2023-05-26 16:53:43'),
+(149, 'tung', 1, 'SDssad', '2023-05-26 16:53:53'),
+(150, 'tung', 3, 'saSADs', '2023-05-26 16:54:02'),
+(151, '1', 1, 'sdfadsf', '2023-05-28 02:35:32'),
+(152, '1', 1, 'adsfadsfa', '2023-05-28 02:35:35'),
+(153, '1', 1, 'adfadsfaafdfadfa', '2023-05-28 02:35:40'),
+(154, '1', 1, 'df', '2023-05-28 02:35:43'),
+(155, '1', 1, 'ư', '2023-05-28 02:36:06'),
+(156, '1', 1, 'ư', '2023-05-28 02:39:36'),
+(157, '1', 1, 'fadsfdsfasdf', '2023-05-28 02:51:47'),
+(158, '1', 1, 'fadsfdsfasdf', '2023-05-28 02:54:29'),
+(159, '1', 1, 'a', '2023-05-28 02:55:59'),
+(160, '1', 1, 'ádasdasdasdasdasdasaad', '2023-05-28 02:56:18'),
+(161, '1', 1, 'SFASDF', '2023-05-28 03:02:53'),
+(162, '1', 1, 'SFASDF', '2023-05-28 03:04:41'),
+(163, '1', 1, 'SFASDF', '2023-05-28 03:07:44'),
+(164, '1', 2, 'dầds', '2023-05-28 03:11:38'),
+(165, '1', 2, 'adfadf', '2023-05-28 03:11:41'),
+(166, '1', 2, 'dfadf', '2023-05-28 03:11:44'),
+(167, '1', 2, 'dfadf', '2023-05-28 03:13:27'),
+(168, '1', 2, 'ầdf', '2023-05-28 03:13:33'),
+(169, '1', 2, 'adsdfasd', '2023-05-28 03:15:08'),
+(170, '1', 1, 'bui', '2023-05-28 06:10:00'),
+(171, '1', 1, 'Xin chào\r\n', '2023-05-28 10:19:33'),
+(172, 'tung', 1, 'hello', '2023-05-28 10:46:43'),
+(173, 'tung', 5, 'sfgsdgsfs', '2023-05-28 10:55:45'),
+(174, 'tung', 5, 'sfgsfgsf', '2023-05-28 10:55:48'),
+(175, 'tung', 5, 'ggg', '2023-05-28 10:55:53'),
+(176, 'tung', 5, 'g', '2023-05-28 10:55:56'),
+(177, '1', 2, 'xe chất lượng', '2023-05-28 14:10:38');
 
 -- --------------------------------------------------------
 
@@ -49,7 +105,7 @@ CREATE TABLE `tbl_car` (
 --
 
 INSERT INTO `tbl_car` (`id`, `name`, `title`, `price`, `color`, `image`, `image1`, `image2`, `description`, `numberofseats`, `style`, `fuel`, `origin`, `gear`) VALUES
-(1, 'CAMRY 2.5HV', 'XỨNG TẦM DOANH NHÂN', '500,000 VND', 'Đen và Trắ', 'image/camry.jpg', 'image/camry1.jpg', 'image/camry2.jpg', 'Thông số sản phẩm:\r\n- Tên: Toyota Camry 2.5HV 2022\r\n- Phân khúc: sedan hạng D\r\n- Số chỗ: 5\r\n- Xuất sứ: Thái Lan\r\n- Kích thước tổng thể (DxRxC) (mm): 4.886 x 1.840 x 1.445\r\n- Dung tích bình nhiên liệu (L): 50\r\n- Nhiên liệu: xăng lai điện\r\n- Động cơ xăng: 2.5L (175 hp/ 221 Nm)\r\n- Mô-tơ điện: 86 hp/202 Nm\r\n- Công suất tối đa (hp@vòng/phút): 208\r\n- Số tự động: vô cấp CTV\r\n- Phanh trước/sau: Đĩa tản nhiệt/Đĩa\r\n \r\nKhông có quá nhiều thay đổi về bộ cánh của Toyota Camry 2022 nâng cấp mới nói chung và Camry 2.5 HV 2022 nói riêng. Xe vẫn giữ được những nét thiết kế đặc trưng bản bản hiện hành. Đó là sự trẻ trung, năng động và hiện đại, đặc biệt là “cái chất” doanh nhân sang trọng, cao cấp và quyền lực từ trước đến nay của Camry.', '5', 'Sedan', 'Xăng', 'Thái Lan', 'vô cấp CTV'),
+(1, 'CAMRY 2.5HV1', 'XỨNG TẦM DOANH NHÂN', '500,000 VND', 'Đen và Trắ', 'image/camry.jpg', 'image/camry1.jpg', 'image/camry2.jpg', 'Thông số sản phẩm:\r\n- Tên: Toyota Camry 2.5HV 2022\r\n- Phân khúc: sedan hạng D\r\n- Số chỗ: 5\r\n- Xuất sứ: Thái Lan\r\n- Kích thước tổng thể (DxRxC) (mm): 4.886 x 1.840 x 1.445\r\n- Dung tích bình nhiên liệu (L): 50\r\n- Nhiên liệu: xăng lai điện\r\n- Động cơ xăng: 2.5L (175 hp/ 221 Nm)\r\n- Mô-tơ điện: 86 hp/202 Nm\r\n- Công suất tối đa (hp@vòng/phút): 208\r\n- Số tự động: vô cấp CTV\r\n- Phanh trước/sau: Đĩa tản nhiệt/Đĩa\r\n \r\nKhông có quá nhiều thay đổi về bộ cánh của Toyota Camry 2022 nâng cấp mới nói chung và Camry 2.5 HV 2022 nói riêng. Xe vẫn giữ được những nét thiết kế đặc trưng bản bản hiện hành. Đó là sự trẻ trung, năng động và hiện đại, đặc biệt là “cái chất” doanh nhân sang trọng, cao cấp và quyền lực từ trước đến nay của Camry.', '5', 'Sedan', 'Xăng', 'Thái Lan', 'vô cấp CTV'),
 (2, 'WIGO 4AT', 'GỌN NHỎ LƯỚT PHỐ', '400,000 VND', 'Đen và Trắ', 'image/wigo.jpg', 'image/wigo1.jpg', 'image/wigo2.jpg', 'Thông số sản phẩm:\r\n- Tên: Toyota Wigo 4AT\r\n- Phân khúc: Hạng A\r\n- Số chỗ: 5\r\n- Xuất sứ: Thái Lan\r\n- Kích thước tổng thể (DxRxC) (mm): 3660 x 1600 x 1520\r\n- Dung tích bình nhiên liệu (L): 33\r\n- Nhiên liệu: xăng\r\n- Động cơ xăng: 108/4200 (Nm/rpm) \r\n- Công suất tối đa: 86/6000 (hp/rpm)\r\n- Số tự động: 4 cấp\r\n- Phanh trước/sau: Đĩa tản nhiệt/Đĩa\r\n \r\nTương tự người anh em Wigo 1.2MT, Toyota Wigo 4AT chỉ nhỉnh hơn với một số nâng cấp nhỏ về mặt trang bị bên trong, không có khác biệt lớn về khả năng vận hành. Tuy nhiên với những đặc điểm đó, xe là sự lựa chọn rất đáng cân nhắc với những đối tượng doanh nghiệp vận tải hay những hộ gia đình có kinh tế không mấy khá giả cần một mẫu xe có thân hình nhỏ gọn, mức giá không quá cao cùng với sự bền bỉ trong thời gian dài.', '5', 'Hatchback', 'Xăng', 'Thái Lan', '4 cấp'),
 (3, 'YARIS 1.5G CTV', 'SÀNH ĐIỆU XUỐNG PHỐ', '400,000 VND', 'Đen và Trắ', 'image/yaris.png', 'image/yaris1.jpg', 'image/yaris2.jpg', 'Thông số sản phẩm:\r\n- Tên: YARIS 1.5G CTV\r\n- Phân khúc: Hạng A\r\n- Số chỗ: 5\r\n- Xuất sứ: Thái Lan\r\n- Kích thước tổng thể (DxRxC) (mm): 4145 x 1730 x 1500\r\n- Dung tích bình nhiên liệu (L): 42\r\n- Nhiên liệu: xăng\r\n- Động cơ xăng: 2.5L (175 hp/ 221 Nm)\r\n- Mô-tơ điện: 80 hp/202 Nm\r\n- Công suất tối đa (hp@vòng/phút): 200\r\n- Số tự động: vô cấp\r\n- Phanh trước/sau: Đĩa tản nhiệt/Đĩa\r\n \r\nVới nhiều sự cải tiến mới mẻ, nội thất tuy chưa được sang trọng nhưng đã tinh tế hơn, được trang bị nhiều tính năng an toàn hiện đại. Toyota Yaris 2022 đang dần chinh phục khách hàng Việt đặc biệt là phái nữ, đối tượng khách hàng yêu thích sự nhỏ gọn, thiết kế trẻ trung.\r\n\r\nXe đáp ứng tốt các nhu cầu cơ bản như đi làm, thể thao, du lịch cũng như sự bền bỉ về động cơ, vận hành ổn, không hỏng vặt, tiết kiệm nhiên liệu cộng với giá trị thương hiệu Honda tại Việt Nam giúp xe trở thành sự lựa chọn rất đáng cân nhắc trong tầm giá.', '5', 'Hatchback', 'Xăng', 'Thái Lan', 'vô cấp'),
 (4, 'RAIZE', 'KHUẤY ĐẢO CUỘC CHƠI', '450,000 VND', 'Đen và Trắ', 'image/raize.jpg', 'image/raize1.jpg', 'image/raize2.png', 'Thông số sản phẩm:\r\n- Tên: Toyota RAIZE\r\n- Phân khúc: Hạng A\r\n- Số chỗ: 5\r\n- Xuất sứ: Indonesia\r\n- Kích thước tổng thể (DxRxC) (mm): 4030 x 1710 x 1605\r\n- Dung tích bình nhiên liệu (L): 36\r\n- Nhiên liệu: xăng\r\n- Động cơ xăng: 140/2400 - 4000\r\n- Công suất tối đa (hp@vòng/phút):98/6000\r\n- Số tự động: vô cấp\r\n- Phanh trước/sau: Đĩa tản nhiệt/Đĩa\r\n \r\nToyota Raize 2022 đã chính thức ra mắt thị trường Việt Nam trong sự kiện diễn ra vào tối ngày 4/11. Mẫu SUV hạng A của Toyota thu hút sự quan tâm đặc biệt của những người yêu xe với thiết kế trẻ trung, năng động, nhắm vào phân khúc khách mua xe lần đầu đang cực hot.\r\n\r\nMức độ “cháy hàng” của Raize là không thể bàn cãi khi ngay từ giai đoạn nhận đặt cọc mua xe đã có hiện tượng “bia kèm lạc” - khách hàng muốn nhận xe sớm sẽ phải chi thêm 20-30 triệu đồng cho đại lý dưới hình thức mua kèm phụ kiện, bảo hiểm,...', '5', 'SUV', 'Xăng', 'Indonesia', 'vô cấp'),
@@ -125,6 +181,12 @@ INSERT INTO `tbl_user` (`username`, `password`) VALUES
 --
 
 --
+-- Chỉ mục cho bảng `comments`
+--
+ALTER TABLE `comments`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Chỉ mục cho bảng `tbl_car`
 --
 ALTER TABLE `tbl_car`
@@ -146,6 +208,12 @@ ALTER TABLE `tbl_user`
 --
 -- AUTO_INCREMENT cho các bảng đã đổ
 --
+
+--
+-- AUTO_INCREMENT cho bảng `comments`
+--
+ALTER TABLE `comments`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=178;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_car`

@@ -3,6 +3,7 @@
 	require_once("models/dangkylaithu.php");
     require_once("models/db_module.php");
     require_once("models/danhsach.php");
+    require_once('models/comment.php');
     class Model 
     {
         public function getproductofpage(){
@@ -148,6 +149,24 @@
             $link = null;
             taoKetNoi($link);
             $result = chayTruyVanKhongTraVeDL($link, "INSERT INTO tbl_dangkylaithu VALUES ('$hovaten','$id_car','$sodienthoai','$ngaydukien','$username')");
+        }
+        //Thêm bình luận
+        public static function addComment($name,$carid,$comment){
+            $link = null;
+            taoKetNoi($link);
+            $result = chayTruyVanKhongTraVeDL($link, "INSERT INTO comments (username,carid, comment) VALUES ('$name','$carid', '$comment')");
+        }
+        //lấy bình luận
+        public function getListComment($carid){
+            $link = null;
+            taoKetNoi($link);
+            $result = chayTruyVanTraVeDL($link, "SELECT * FROM comments WHERE carid=$carid ORDER BY created_at DESC");
+            $data = array ();
+            while ($row = mysqli_fetch_assoc($result)) {
+              $comment = new comment($row["username"],$row["comment"],$row["created_at"]);
+              array_push($data,$comment);
+                }
+            return $data;
         }
 		
     }
