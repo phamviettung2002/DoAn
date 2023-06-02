@@ -107,9 +107,21 @@
 							<p style="font-size: 13pt;">- Thời gian:<?php echo(" ".date("d/m/Y",strtotime($_POST['ngaydukien'])));?></p>
 							
 						</section>
+						<section class="mx-5">
+							<p><h5>Hình thức thanh toán:</p></h5>
+							<div class="row">
+							<a href="" class="btn btn-primary col-md-5">COD (trả tiền trực tiếp khi đến thử xe) </a>
+							<form class="col-md-5" method="POST" target="_blank" enctype="application/x-www-form-urlencoded"
+                          	action="views/xulythanhtoanmomo.php">
+							<input name="momo" type="submit" value="Thanh toán MOMO" class="btn btn-danger"></button>
+							</form>
+							</div>	
+							
+						</section>
 						<section class="mx-5" style ="padding-top: 30px">
 							<p class="text-center" style="font-size: 13pt;">Nhân viên tư vấn bán hàng sẽ liên hệ với Quý khách để xác nhận lịch hẹn trong thời gian sớm nhất. Xin trân trọng cảm ơn!</p>
 						</section>
+						
 						<section>
 							<p><h5 class="mx-5">Mẫu xe đã chọn:</h5></p>
 							<hr style="background-color:#5837D0;">
@@ -121,6 +133,7 @@
 
 							</div>
 						</section>
+						
 					</div>
 				</div>
 			</div>
