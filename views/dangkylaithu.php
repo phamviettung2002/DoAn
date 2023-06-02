@@ -128,6 +128,7 @@
 						  <label for="ngaydukien">Ngày Dự Kiến*</label>
 						  <input type="date" class="form-control" id="ngaydukien" name="ngaydukien" placeholder="12/11/2022" required>
 						</div>
+
 					  <div class="form-group form-check mx-5">
 						  <input class="form-check-input" type="checkbox" id="check1" name="check" required>
 						  <label class="form-check-label" for="check1">

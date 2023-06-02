@@ -3,6 +3,7 @@
 	require_once("models/dangkylaithu.php");
     require_once("models/db_module.php");
     require_once("models/danhsach.php");
+    require_once("models/tatcadanhsach.php");
     require_once('models/comment.php');
     class Model 
     {
@@ -60,12 +61,12 @@
             return $data;
         }
 
-        //Lấy danh sách xe đã đăng ký
+        //Lấy danh sách xe đã đăng ký theo tên
         public function getcarsub ($username)
         {
             $link = null;
             taoKetNoi($link);
-            $result = chayTruyVanTraVeDL ($link, "SELECT tbl_car.name,  tbl_dangkylaithu.ngaydukien FROM (tbl_car INNER JOIN tbl_dangkylaithu ON tbl_car.id = tbl_dangkylaithu.id_car) WHERE tbl_dangkylaithu.username ="."'$username'");
+            $result = chayTruyVanTraVeDL ($link, "SELECT tbl_car.name, tbl_dangkylaithu.ngaydukien FROM (tbl_car INNER JOIN tbl_dangkylaithu ON tbl_car.id = tbl_dangkylaithu.id_car) WHERE tbl_dangkylaithu.username ="."'$username'");
             $data = array ();
             while ($rows = mysqli_fetch_assoc($result)){
                 $car = new danhsach ($rows["name"], $rows["ngaydukien"]);
@@ -75,6 +76,20 @@
             return $data;
         }
 
+        //admin lấy danh sách xe đã đăng ký 
+        public function getallcarsub ()
+        {
+            $link = null;
+            taoKetNoi($link);
+            $result = chayTruyVanTraVeDL ($link, "SELECT tbl_car.name, tbl_car.price, tbl_dangkylaithu.ngaydukien, tbl_dangkylaithu.hovaten, tbl_dangkylaithu.sodienthoai FROM (tbl_car INNER JOIN tbl_dangkylaithu ON tbl_car.id = tbl_dangkylaithu.id_car) ");
+            $data = array ();
+            while ($rows = mysqli_fetch_assoc($result)){
+                $car = new tatcadanhsach ($rows["name"], $rows["price"], $rows["hovaten"], $rows["sodienthoai"], $rows["ngaydukien"] );
+                array_push($data, $car);
+            }
+            giaiPhongBoNho($link, $result);
+            return $data;
+        }
         // Lấy xe theo id
         public function getcar($id)
         {
