@@ -20,7 +20,7 @@
 		<div class="row ">
 			<div class="col-md-12 m-auto">
 					<nav class="navbar navbar-expand-lg fixed-top" style="background-color: #5837D0;">
-						<a class="navbar-brand text-white" href="index.php"><img src="./image/logo_toyota.png" alt="LOGGO" with="25" height="50"></a>
+						<a class="navbar-brand text-white" href="index.php"><img src="./image/car-rental-logo-on-white-background-luxury-car-illustration-modern-business-concept-car-rental-company-transportation-service-business-vector.jpg" alt="LOGGO" with="25" height="50"></a>
 						<button class="navbar-toggler navbar-light bg-light" type="button" data-toggle="collapse" data-target="#navbarResponsive">
 							<span class="navbar-toggler-icon"></span>
 						</button>

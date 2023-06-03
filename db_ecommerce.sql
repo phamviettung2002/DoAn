@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
--- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th6 02, 2023 lúc 07:29 PM
--- Phiên bản máy phục vụ: 10.4.24-MariaDB
--- Phiên bản PHP: 8.1.6
+-- Máy chủ: sql312.byetcluster.com
+-- Thời gian đã tạo: Th6 03, 2023 lúc 04:49 AM
+-- Phiên bản máy phục vụ: 10.4.17-MariaDB
+-- Phiên bản PHP: 7.2.22
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -18,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Cơ sở dữ liệu: `db_ecommerce`
+-- Cơ sở dữ liệu: `b31_34342753_db_ecommerce`
 --
 
 -- --------------------------------------------------------
@@ -29,11 +30,11 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `comments` (
   `id` int(11) NOT NULL,
-  `username` varchar(255) NOT NULL,
+  `username` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `carid` int(11) NOT NULL,
-  `comment` text NOT NULL,
+  `comment` text COLLATE utf8_unicode_ci NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `comments`
@@ -41,41 +42,32 @@ CREATE TABLE `comments` (
 
 INSERT INTO `comments` (`id`, `username`, `carid`, `comment`, `created_at`) VALUES
 (142, '1', 3, 'hay', '2023-05-26 16:51:51'),
-(143, '1', 3, 'đẹp', '2023-05-26 16:51:58'),
 (144, '2', 3, 'good', '2023-05-26 16:52:24'),
 (145, 'nhom', 3, 'sdsas', '2023-05-26 16:52:48'),
 (146, 'nhom', 2, 'dsAD', '2023-05-26 16:53:09'),
 (147, 'nhom', 1, 'dsaSAD', '2023-05-26 16:53:20'),
-(148, 'tung', 1, 'áSDA', '2023-05-26 16:53:43'),
 (149, 'tung', 1, 'SDssad', '2023-05-26 16:53:53'),
 (150, 'tung', 3, 'saSADs', '2023-05-26 16:54:02'),
 (151, '1', 1, 'sdfadsf', '2023-05-28 02:35:32'),
 (152, '1', 1, 'adsfadsfa', '2023-05-28 02:35:35'),
 (153, '1', 1, 'adfadsfaafdfadfa', '2023-05-28 02:35:40'),
 (154, '1', 1, 'df', '2023-05-28 02:35:43'),
-(155, '1', 1, 'ư', '2023-05-28 02:36:06'),
-(156, '1', 1, 'ư', '2023-05-28 02:39:36'),
 (157, '1', 1, 'fadsfdsfasdf', '2023-05-28 02:51:47'),
 (158, '1', 1, 'fadsfdsfasdf', '2023-05-28 02:54:29'),
 (159, '1', 1, 'a', '2023-05-28 02:55:59'),
-(160, '1', 1, 'ádasdasdasdasdasdasaad', '2023-05-28 02:56:18'),
 (161, '1', 1, 'SFASDF', '2023-05-28 03:02:53'),
 (162, '1', 1, 'SFASDF', '2023-05-28 03:04:41'),
 (163, '1', 1, 'SFASDF', '2023-05-28 03:07:44'),
-(164, '1', 2, 'dầds', '2023-05-28 03:11:38'),
 (165, '1', 2, 'adfadf', '2023-05-28 03:11:41'),
 (166, '1', 2, 'dfadf', '2023-05-28 03:11:44'),
 (167, '1', 2, 'dfadf', '2023-05-28 03:13:27'),
-(168, '1', 2, 'ầdf', '2023-05-28 03:13:33'),
 (169, '1', 2, 'adsdfasd', '2023-05-28 03:15:08'),
 (170, '1', 1, 'bui', '2023-05-28 06:10:00'),
-(171, '1', 1, 'Xin chào\r\n', '2023-05-28 10:19:33'),
 (172, 'tung', 1, 'hello', '2023-05-28 10:46:43'),
 (173, 'tung', 5, 'sfgsdgsfs', '2023-05-28 10:55:45'),
 (174, 'tung', 5, 'sfgsfgsf', '2023-05-28 10:55:48'),
 (175, 'tung', 5, 'ggg', '2023-05-28 10:55:53'),
-(176, 'tung', 5, 'g', '2023-05-28 10:55:56'),
-(177, '1', 2, 'xe chất lượng', '2023-05-28 14:10:38');
+(176, 'tung', 5, 'g', '2023-05-28 10:55:56');
 
 -- --------------------------------------------------------
 
@@ -92,7 +84,7 @@ CREATE TABLE `tbl_car` (
   `image` varchar(80) COLLATE utf8_unicode_ci NOT NULL,
   `image1` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `image2` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `description` text COLLATE utf8_unicode_ci NOT NULL,
+  `description` mediumtext COLLATE utf8_unicode_ci NOT NULL,
   `numberofseats` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
   `style` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
   `fuel` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
@@ -105,13 +97,13 @@ CREATE TABLE `tbl_car` (
 --
 
 INSERT INTO `tbl_car` (`id`, `name`, `title`, `price`, `color`, `image`, `image1`, `image2`, `description`, `numberofseats`, `style`, `fuel`, `origin`, `gear`) VALUES
-(1, 'CAMRY 2.5HV1', 'XỨNG TẦM DOANH NHÂN', '500,000 VND', 'Đen và Trắ', 'image/camry.jpg', 'image/camry1.jpg', 'image/camry2.jpg', 'Thông số sản phẩm:\r\n- Tên: Toyota Camry 2.5HV 2022\r\n- Phân khúc: sedan hạng D\r\n- Số chỗ: 5\r\n- Xuất sứ: Thái Lan\r\n- Kích thước tổng thể (DxRxC) (mm): 4.886 x 1.840 x 1.445\r\n- Dung tích bình nhiên liệu (L): 50\r\n- Nhiên liệu: xăng lai điện\r\n- Động cơ xăng: 2.5L (175 hp/ 221 Nm)\r\n- Mô-tơ điện: 86 hp/202 Nm\r\n- Công suất tối đa (hp@vòng/phút): 208\r\n- Số tự động: vô cấp CTV\r\n- Phanh trước/sau: Đĩa tản nhiệt/Đĩa\r\n \r\nKhông có quá nhiều thay đổi về bộ cánh của Toyota Camry 2022 nâng cấp mới nói chung và Camry 2.5 HV 2022 nói riêng. Xe vẫn giữ được những nét thiết kế đặc trưng bản bản hiện hành. Đó là sự trẻ trung, năng động và hiện đại, đặc biệt là “cái chất” doanh nhân sang trọng, cao cấp và quyền lực từ trước đến nay của Camry.', '5', 'Sedan', 'Xăng', 'Thái Lan', 'vô cấp CTV'),
-(2, 'WIGO 4AT', 'GỌN NHỎ LƯỚT PHỐ', '400,000 VND', 'Đen và Trắ', 'image/wigo.jpg', 'image/wigo1.jpg', 'image/wigo2.jpg', 'Thông số sản phẩm:\r\n- Tên: Toyota Wigo 4AT\r\n- Phân khúc: Hạng A\r\n- Số chỗ: 5\r\n- Xuất sứ: Thái Lan\r\n- Kích thước tổng thể (DxRxC) (mm): 3660 x 1600 x 1520\r\n- Dung tích bình nhiên liệu (L): 33\r\n- Nhiên liệu: xăng\r\n- Động cơ xăng: 108/4200 (Nm/rpm) \r\n- Công suất tối đa: 86/6000 (hp/rpm)\r\n- Số tự động: 4 cấp\r\n- Phanh trước/sau: Đĩa tản nhiệt/Đĩa\r\n \r\nTương tự người anh em Wigo 1.2MT, Toyota Wigo 4AT chỉ nhỉnh hơn với một số nâng cấp nhỏ về mặt trang bị bên trong, không có khác biệt lớn về khả năng vận hành. Tuy nhiên với những đặc điểm đó, xe là sự lựa chọn rất đáng cân nhắc với những đối tượng doanh nghiệp vận tải hay những hộ gia đình có kinh tế không mấy khá giả cần một mẫu xe có thân hình nhỏ gọn, mức giá không quá cao cùng với sự bền bỉ trong thời gian dài.', '5', 'Hatchback', 'Xăng', 'Thái Lan', '4 cấp'),
-(3, 'YARIS 1.5G CTV', 'SÀNH ĐIỆU XUỐNG PHỐ', '400,000 VND', 'Đen và Trắ', 'image/yaris.png', 'image/yaris1.jpg', 'image/yaris2.jpg', 'Thông số sản phẩm:\r\n- Tên: YARIS 1.5G CTV\r\n- Phân khúc: Hạng A\r\n- Số chỗ: 5\r\n- Xuất sứ: Thái Lan\r\n- Kích thước tổng thể (DxRxC) (mm): 4145 x 1730 x 1500\r\n- Dung tích bình nhiên liệu (L): 42\r\n- Nhiên liệu: xăng\r\n- Động cơ xăng: 2.5L (175 hp/ 221 Nm)\r\n- Mô-tơ điện: 80 hp/202 Nm\r\n- Công suất tối đa (hp@vòng/phút): 200\r\n- Số tự động: vô cấp\r\n- Phanh trước/sau: Đĩa tản nhiệt/Đĩa\r\n \r\nVới nhiều sự cải tiến mới mẻ, nội thất tuy chưa được sang trọng nhưng đã tinh tế hơn, được trang bị nhiều tính năng an toàn hiện đại. Toyota Yaris 2022 đang dần chinh phục khách hàng Việt đặc biệt là phái nữ, đối tượng khách hàng yêu thích sự nhỏ gọn, thiết kế trẻ trung.\r\n\r\nXe đáp ứng tốt các nhu cầu cơ bản như đi làm, thể thao, du lịch cũng như sự bền bỉ về động cơ, vận hành ổn, không hỏng vặt, tiết kiệm nhiên liệu cộng với giá trị thương hiệu Honda tại Việt Nam giúp xe trở thành sự lựa chọn rất đáng cân nhắc trong tầm giá.', '5', 'Hatchback', 'Xăng', 'Thái Lan', 'vô cấp'),
-(4, 'RAIZE', 'KHUẤY ĐẢO CUỘC CHƠI', '450,000 VND', 'Đen và Trắ', 'image/raize.jpg', 'image/raize1.jpg', 'image/raize2.png', 'Thông số sản phẩm:\r\n- Tên: Toyota RAIZE\r\n- Phân khúc: Hạng A\r\n- Số chỗ: 5\r\n- Xuất sứ: Indonesia\r\n- Kích thước tổng thể (DxRxC) (mm): 4030 x 1710 x 1605\r\n- Dung tích bình nhiên liệu (L): 36\r\n- Nhiên liệu: xăng\r\n- Động cơ xăng: 140/2400 - 4000\r\n- Công suất tối đa (hp@vòng/phút):98/6000\r\n- Số tự động: vô cấp\r\n- Phanh trước/sau: Đĩa tản nhiệt/Đĩa\r\n \r\nToyota Raize 2022 đã chính thức ra mắt thị trường Việt Nam trong sự kiện diễn ra vào tối ngày 4/11. Mẫu SUV hạng A của Toyota thu hút sự quan tâm đặc biệt của những người yêu xe với thiết kế trẻ trung, năng động, nhắm vào phân khúc khách mua xe lần đầu đang cực hot.\r\n\r\nMức độ “cháy hàng” của Raize là không thể bàn cãi khi ngay từ giai đoạn nhận đặt cọc mua xe đã có hiện tượng “bia kèm lạc” - khách hàng muốn nhận xe sớm sẽ phải chi thêm 20-30 triệu đồng cho đại lý dưới hình thức mua kèm phụ kiện, bảo hiểm,...', '5', 'SUV', 'Xăng', 'Indonesia', 'vô cấp'),
-(5, 'HILUX ADVENTURE', 'CHINH PHỤC ĐỈNH CAO', '500,000 VND', 'Đen và Trắ', 'image/hilux.jpg', 'image/hilux1.jpg', 'image/hilux2.jpg', 'Thông số sản phẩm:\r\n- Tên: Toyota HILUX 2.8L 4X4 AT ADVENTURE\r\n- Phân khúc: hạng D\r\n- Số chỗ: 5\r\n- Xuất sứ: Thái Lan\r\n- Kích thước tổng thể (DxRxC) (mm): 5325 x 1900 x 1815\r\n- Dung tích bình nhiên liệu (L): 80\r\n- Nhiên liệu: Dầu\r\n- Động cơ xăng: 500/1600\r\n- Công suất tối đa (hp@vòng/phút): (150) 201/3400\r\n- Số tự động: 6 cấp\r\n- Phanh trước/sau: Đĩa tản nhiệt/Đĩa\r\n \r\nNhìn chung, các phiên bản Hilux 2022 mà Toyota cung cấp đã đáp ứng được đầy đủ nhu cầu của khách hàng Việt. Nếu như mua xe sử dụng kinh doanh, Hilux 2.4 4×2 AT với giá bán thấp nhất sẽ là lựa chọn lý tưởng.\r\n\r\nNếu cần một mẫu bán tải có khả năng “băng rừng, lội suối”, Hilux 2.4 4×4 MT với khả năng gài cầu điện tử sẽ rất thích hợp. Còn đối với những ai cần một chiếc bán tải đầy đủ tiện nghi để có thể vừa sử dụng đi làm, vận chuyển hàng hoá, du lịch và kể cả vượt địa hình thì Hilux 2.8G 4×4 AT MLM sẽ là ứng viên sáng giá.', '5', 'Hilux', 'Dầu', 'Thái Lan', '6 cấp'),
-(6, 'LAND CRUISER 300', 'UY LỰC THỐNG LĨNH', '600,000 VND', 'Đen và Trắ', 'image/landcruiser.jpg', 'image/landcruiser1.jpg', 'image/landcruiser2.jpg', 'Thông số sản phẩm:\n- Tên: Toyota LAND CRUISER 300\n- Phân khúc:hạng D\n- Số chỗ: 7\n- Xuất sứ: Thái Lan\n- Kích thước tổng thể (DxRxC) (mm): 	4965 x 1980 x 1945\n- Dung tích bình nhiên liệu (L): 93\n- Nhiên liệu: xăng\n- Động cơ xăng: 650 / 2000 - 3600\n- Công suất tối đa (hp@vòng/phút): 227(304) / 5500\n- Số tự động: 10 cấp\n- Phanh trước/sau: Đĩa tản nhiệt/Đĩa\n \nToyota Land Cruiser 300 2022 là thế hệ mới nhất được nâng cấp toàn diện về động cơ, hộp số, các tính năng an toàn cao cấp, thiết kế nội ngoại thất và các trang thiết bị tiện nghi cao cấp. Đây cũng là 1 bước tiến quan trọng của hãng khi mà xu hướng các dòng SUV cỡ lớn đang xu hướng nhỏ dần dung tích động cơ và tập trung vào các giá trị công nghệ và an toàn cho xe.\n\nVới 1 loạt thay đổi lớn như thế nhưng giá bán của Land Cruiser 300 lại chỉ có nhỉnh hơn 30 triệu so với phiên bản trước đó, nguyên nhân chính của sự thay đổi này do dung tích động cơ 3.5L chịu mức thuế tiêu thụ đặc biệt nhỏ hơn rất nhiều so với dung tích 4.6 trước đó.', '7', 'SUV', 'Xăng', 'Thái Lan', '10 cấp'),
-(7, 'VIOS 2022', 'XẾ CƯNG QUÓC DÂN', '400,000 VND', 'Đen và Trắ', 'image/vios.jpg', 'image/vios1.jpg', 'image/vios2.jpg', 'Thông số sản phẩm:\r\n- Tên: Toyota VIOS 2022\r\n- Phân khúc: hạng B\r\n- Số chỗ: 5\r\n- Xuất sứ: Thái Lan\r\n- Kích thước tổng thể (DxRxC) (mm): 	4425 x 1730 x 1475\r\n- Dung tích bình nhiên liệu (L): 42\r\n- Nhiên liệu: xăng\r\n- Động cơ xăng: 650 / 2000 - 3600\r\n- Công suất tối đa (hp@vòng/phút): 79 (107) / 6000\r\n- Số tự động: 10 cấp\r\n- Phanh trước/sau: Đĩa tản nhiệt/Đĩa\r\n\r\nNhìn chung với nhiều cải tiến về bên ngoài cũng như động cơ được cải thiện, yếu tố thương hiệu về độ bền động cơ, ít hỏng vặt, giá bán xe cũ khá tốt giúp Toyota Vios lấy lòng được nhiều khách hàng từ bao năm nay.Nếu bạn thực sự quan tâm nhiều đến một chiếc xe cần nhiều đến yếu tố “ăn chắc, mặc bền” và nhiều tính năng an toàn thì Vios là một lựa chọn khá hợp lý.', '5', 'Sedan', 'Xăng', 'Thái Lan', '10 cấp CTV');
+(1, 'CAMRY 2.5HV1', 'WORTHY OF A  BUSINESSMAN', '500,000 VND', 'Black and ', 'image/camry.jpg', 'image/camry1.jpg', 'image/camry2.jpg', 'Product specifications:\r\n- Name: Toyota Camry 2.5HV 2022\r\n- Segment: D class sedan\r\n- Number of seats: 5\r\n- Origin: Thailand\r\n- Overall size (DxRxC) (mm): 4.886 x 1.840 x 1.445\r\n- Fuel tank capacity (L): 50\r\n- Fuel : electric hybrid gasoline\r\n- Gasoline engine: 2.5L (175 hp/ 221 Nm)\r\n- Electric motor: 86 hp/202 Nm\r\n- Maximum capacity (hp/minute): 208\r\n- Automatic number: CTV\r\n- Brakes front/rear: Radiator disc/Disc\r\n \r\nThere are not too many changes in the outfit of the new upgraded Toyota Camry 2022 in general and the Camry 2.5 HV 2022 in particular. The car still retains the typical design features of the current version. It is the youthful, dynamic and modern, especially the luxurious, high-class and powerful business \"essence\" of Camry.', '5', 'Sedan', 'gasoline', 'Thailand', 'CTV'),
+(2, 'WIGO 4AT', 'SMALL SURFING THE CITY', '400,000 VND', 'Black and ', 'image/wigo.jpg', 'image/wigo1.jpg', 'image/wigo2.jpg', 'Product specifications:\r\n- Name: Toyota Wigo 4AT\r\n- Segment: A class sedan\r\n- Number of seats: 5\r\n- Origin: Thailand\r\n- Overall size (DxRxC) (mm): 3660 x 1600 x 1520\r\n- Fuel tank capacity (L): 33\r\n- Fuel: gasoline\r\n- Gasoline engine: 108/4200 (Nm/rpm) \r\n- Maximum capacity: 86/6000 (hp/rpm)\r\n- Automatic number: 4 levels\r\n- Brakes front/rear: Radiator disc/Disc\r\n \r\nSimilar to the Wigo 1.2MT brother, the Toyota Wigo 4AT is only marginally better with some minor upgrades in terms of interior equipment, with no big difference in performance. However, with those features, the car is a very worthy choice for transport businesses or households with a not-so-well-off economy who need a model with a compact body, a low price. too high with long-term durability.', '5', 'Hatchback', 'Gasoline', 'Thailand', '4 levels'),
+(3, 'YARIS 1.5G CTV', 'GUYS DOWN TO THE STREET', '400,000 VND', 'Black and ', 'image/yaris.png', 'image/yaris1.jpg', 'image/yaris2.jpg', 'Product specifications:\r\n- Name: YARIS 1.5G CTV\r\n- Segment: A\r\n- Number of seats: 5\r\n- Origin: Thailand\r\n- Overall size (DxRxC) (mm): 4145 x 1730 x 1500\r\n- Fuel tank capacity (L): 42\r\n- Fuel: gasoline\r\n- Gasoline engine: 2.5L (175 hp/ 221 Nm)\r\n- Electric motor: 80 hp/202 Nm\r\n- Maximum capacity (hp/minute): 200\r\n- Automatic number: CTV\r\n- Brakes front/rear: Radiator disc/Disc\r\n \r\nWith many new improvements, the interior, although not luxurious, is more refined, equipped with many modern safety features. Toyota Yaris 2022 is gradually conquering Vietnamese customers, especially women, customers who love compactness and youthful design.\r\n\r\nThe car meets basic needs such as commuting to work, sports, travel as well as engine durability, stable operation, no breakdowns, fuel economy plus Honda brand value in Vietnam to help. The car becomes a very worthy choice in the price range.', '5', 'Hatchback', 'Fuel', 'Thailand', 'CTV'),
+(4, 'RAIZE', 'STUNNING THE GAME', '450,000 VND', 'Black and ', 'image/raize.jpg', 'image/raize1.jpg', 'image/raize2.png', 'Product specifications:\r\n- Name: Toyota RAIZE\r\n- Segment: A\r\n- Number of seats: 5\r\n- Origin: Indonesia\r\n- Overall size (DxRxC) (mm): 4030 x 1710 x 1605\r\n- Fuel tank capacity (L): 36\r\n- Fuel: gasoline\r\n- Gasoline engine: 140/2400 - 4000\r\n- CMaximum capacity (hp/minute):98/6000\r\n- Automatic number: vô cấp\r\n- Brakes front/rear: Radiator disc/Disc\r\n \r\nToyota Raize 2022 was officially launched in Vietnam at the event on the evening of November 4. Toyota\'s A-class SUV model attracts special attention from car lovers with its youthful and dynamic design, targeting the extremely hot first-time car buyers segment.\r\n\r\nRaize\'s level of \"sold out\" is indisputable when right from the stage of receiving a deposit to buy a car, there is a phenomenon of \"beer with peanuts\" - customers who want to receive the car soon will have to spend an additional 20-30 million VND for the dealer. in the form of purchasing with accessories, insurance, ...', '5', 'SUV', 'Fuel', 'Indonesia', 'CTV'),
+(5, 'HILUX ADVENTURE', 'CONQUER THE PEAK', '500,000 VND', 'Black and ', 'image/hilux.jpg', 'image/hilux1.jpg', 'image/hilux2.jpg', 'Product specifications:\r\n- Name: Toyota HILUX 2.8L 4X4 AT ADVENTURE\r\n- Segment: D\r\n- Number of seats: 5\r\n- Origin: Thailand\r\n- Overall size (DxRxC) (mm): 5325 x 1900 x 1815\r\n- Fuel tank capacity (L): 80\r\n- Fuel: Oil\r\n- Oil engine: 500/1600\r\n- Maximum capacity (hp/minute): (150) 201/3400\r\n- Automatic number: 6 levels\r\n- Brakes front/rear: Radiator disc/Disc\r\n \r\nIn general, the Hilux 2022 versions provided by Toyota have fully met the needs of Vietnamese customers. If buying a car for business use, Hilux 2.4 4x2 AT with the lowest price will be the ideal choice.\r\n\r\nIf you need a pickup model capable of \"crossing the forest, wading streams\", the Hilux 2.4 4x4 MT with the ability to set the electronic bridge will be very suitable. As for those who need a fully equipped pickup that can be used both to work, transport goods, travel and even cross the terrain, the Hilux 2.8G 4x4 AT MLM will be a good candidate.', '5', 'Hilux', 'Oil', 'Thailand', '6 levels'),
+(6, 'LAND CRUISER 300', 'POWER OF COMMUNITY', '600,000 VND', 'Black and ', 'image/landcruiser.jpg', 'image/landcruiser1.jpg', 'image/landcruiser2.jpg', 'Product specifications:\r\n- Name: Toyota LAND CRUISER 300\r\n- Segment: D\r\n- Number of seats: 7\r\n- Origin: Thailand\r\n- Overall size (DxRxC) (mm): 	4965 x 1980 x 1945\r\n- Fuel tank capacity (L): 93\r\n- Fuel: gasoline\r\n- Gasoline engine: 650 / 2000 - 3600\r\n- Maximum capacity (hp/minute): 227(304) / 5500\r\n- Automatic number: 10 levels\r\n- Brakes front/rear: Radiator disc/Disc\r\n \r\nToyota Land Cruiser 300 2022 is the latest generation that has been comprehensively upgraded in terms of engines, transmissions, advanced safety features, interior and exterior design and high-class facilities and equipment. This is also an important step for the company when the trend of large SUVs is gradually reducing the engine capacity and focusing on technology and safety values ​​for the vehicle.\r\n\r\nWith such a series of major changes, the price of the Land Cruiser 300 is only 30 million more than the previous version, the main reason for this change is the 3.5L engine capacity subject to special consumption tax. The difference is much smaller than the previous 4.6 capacity.', '7', 'SUV', 'Gasoline', 'Thailand', '10 levels'),
+(7, 'VIOS 2022', 'NATIONAL DRIVERS', '400,000 VND', 'Black and ', 'image/vios.jpg', 'image/vios1.jpg', 'image/vios2.jpg', 'Product specifications:\r\n- Name: Toyota VIOS 2022\r\n- Segment: B\r\n- Number of seats: 5\r\n- Origin: Thailand\r\n- Overall size (DxRxC) (mm): 	4425 x 1730 x 1475\r\n- Fuel tank capacity (L): 42\r\n- Fuel : gasoline\r\n- Gasoline engine: 650 / 2000 - 3600\r\n- Maximum capacity (hp/minute): 79 (107) / 6000\r\n- Automatic number: 10 levels\r\n- Brakes front/rear: Radiator disc/Disc\r\n\r\nIn general, with many exterior improvements as well as improved engines, brand elements in terms of engine durability, less damage, and good old car prices, Toyota Vios has won the hearts of many customers for many years. .If you really care a lot about a car that needs a lot of \"solid, durable\" factors and many safety features, then Vios is a pretty reasonable choice.', '5', 'Sedan', 'Gasoline', 'Thailand', '10 levels CTV');
 
 -- --------------------------------------------------------
 
@@ -120,12 +112,12 @@ INSERT INTO `tbl_car` (`id`, `name`, `title`, `price`, `color`, `image`, `image1
 --
 
 CREATE TABLE `tbl_dangkylaithu` (
-  `hovaten` varchar(20) NOT NULL,
+  `hovaten` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
   `id_car` int(11) NOT NULL,
-  `sodienthoai` varchar(10) NOT NULL,
+  `sodienthoai` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
   `ngaydukien` date NOT NULL,
-  `username` varchar(20) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `username` varchar(20) COLLATE utf8_unicode_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `tbl_dangkylaithu`
